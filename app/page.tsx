@@ -48,7 +48,7 @@ export default function HomePage() {
                 priority
               />
               <h1 className="text-5xl font-bold text-primary">
-                <span className="font-rawest">Ff</span>
+                <span className="font-rawest font-mono">Ff</span>
                 <span className="font-roboto">ect</span>
                 <span className="text-primary">.</span> {/* Capitalized F and ensured dot color */}
               </h1>

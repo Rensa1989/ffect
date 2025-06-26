@@ -182,18 +182,21 @@ export default function HomePage() {
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-8 text-foreground">Onze 5 Pijlers</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {pillars.map((pillar, index) => (
-              <Card
-                key={index}
-                className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground"
-              >
-                <CardContent className="p-6">
-                  {pillar.icon({ className: "w-12 h-12 text-ffect-medium mx-auto mb-4", ariaHidden: true })}
-                  <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
-                  <p className="text-muted-foreground text-sm">{pillar.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {pillars.map((pillar, index) => {
+              const Icon = pillar.icon
+              return (
+                <Card
+                  key={index}
+                  className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground"
+                >
+                  <CardContent className="p-6">
+                    <Icon className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
+                    <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
+                    <p className="text-muted-foreground text-sm">{pillar.description}</p>
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>

@@ -72,7 +72,7 @@ export default function ContactPage() {
   return (
     <div className="py-16 px-4">
       <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl font-rawest font-bold text-center mb-12 text-foreground">Contact</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-foreground">Contact</h1>
 
         <div className="text-center mb-8">
           <div className="flex justify-center items-center space-x-4 mb-4">
@@ -87,7 +87,7 @@ export default function ContactPage() {
           {/* Contact Information */}
           <Card className="border-ffect-light/20 bg-card text-card-foreground">
             <CardContent className="p-8">
-              <h2 className="text-2xl font-rawest font-bold mb-6 text-foreground">Contactgegevens</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Contactgegevens</h2>
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -130,7 +130,7 @@ export default function ContactPage() {
           {/* Contact Form */}
           <Card className="border-ffect-light/20 bg-card text-card-foreground">
             <CardContent className="p-8">
-              <h2 className="text-2xl font-rawest font-bold mb-6 text-foreground">Stuur een bericht</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Stuur een bericht</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>

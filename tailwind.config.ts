@@ -12,7 +12,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         "open-sans": ["var(--font-open-sans)", "sans-serif"], // Changed to Open Sans
-        rawest: ["var(--font-rawest)", "sans-serif"],
+        // rawest: ["var(--font-rawest)", "sans-serif"],
       },
       colors: {
         background: "hsl(var(--background))",

@@ -53,7 +53,7 @@ export default function ReviewsPage() {
   return (
     <div className="py-16 px-4">
       <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl font-rawest font-bold text-center mb-4 text-foreground">Reviews</h1>
+        <h1 className="text-4xl font-bold text-center mb-4 text-foreground">Reviews</h1>
         <div className="text-center mb-8">
           <div className="flex justify-center items-center space-x-4 mb-4">
             <div className="w-8 h-0.5 bg-ffect-light"></div>

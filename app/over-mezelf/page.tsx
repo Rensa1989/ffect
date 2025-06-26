@@ -6,7 +6,7 @@ export default function OverMezelfPage() {
   return (
     <div className="py-16 px-4">
       <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-rawest font-bold text-center mb-12 text-foreground">Over mezelf</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-foreground">Over mezelf</h1>
 
         <div className="text-center mb-8">
           <div className="flex justify-center items-center space-x-4 mb-4">
@@ -31,7 +31,7 @@ export default function OverMezelfPage() {
                       className="rounded-full object-cover"
                     />
                   </div>
-                  <h2 className="text-2xl font-rawest font-bold text-foreground">Bert Vanhees</h2>
+                  <h2 className="text-2xl font-bold text-foreground">Bert Vanhees</h2>
                 </div>
               </div>
 

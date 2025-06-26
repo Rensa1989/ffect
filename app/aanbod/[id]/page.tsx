@@ -304,7 +304,7 @@ export default function TrainingDetailPage({ params }: { params: { id: string } 
         <Card className="border-ffect-light/20 bg-card text-card-foreground">
           <CardContent className="p-8">
             <div className="mb-8">
-              <h1 className="text-3xl font-rawest font-bold text-foreground mb-4">{training.title}</h1>
+              <h1 className="text-3xl font-bold text-foreground mb-4">{training.title}</h1>
               <p className="text-xl text-ffect-medium font-medium">{training.subtitle}</p>
             </div>
 
@@ -341,7 +341,7 @@ export default function TrainingDetailPage({ params }: { params: { id: string } 
                 <CardContent className="p-6 text-left">
                   <div className="flex items-center mb-4">
                     <Target className="w-6 h-6 text-ffect-medium mr-2" />
-                    <h3 className="text-lg font-rawest font-semibold text-ffect-medium">Doelen van deze vorming</h3>
+                    <h3 className="text-lg font-semibold text-ffect-medium">Doelen van deze vorming</h3>
                   </div>
                   <ul className="space-y-2">
                     {training.goals.map((goal, index) => (
@@ -357,7 +357,7 @@ export default function TrainingDetailPage({ params }: { params: { id: string } 
                 <CardContent className="p-6 text-left">
                   <div className="flex items-center mb-4">
                     <Users className="w-6 h-6 text-ffect-medium mr-2" />
-                    <h3 className="text-lg font-rawest font-semibold text-ffect-medium">Doelgroep</h3>
+                    <h3 className="text-lg font-semibold text-ffect-medium">Doelgroep</h3>
                   </div>
                   <p className="text-foreground text-sm leading-relaxed">{training.targetGroup}</p>
                 </CardContent>

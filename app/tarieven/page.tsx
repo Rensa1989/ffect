@@ -7,7 +7,7 @@ export default function TarievenPage() {
   return (
     <div className="py-16 px-4">
       <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-rawest font-bold text-center mb-12 text-foreground">Tarieven</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-foreground">Tarieven</h1>
 
         <div className="text-center mb-8">
           <div className="flex justify-center items-center space-x-4 mb-4">
@@ -33,7 +33,7 @@ export default function TarievenPage() {
               <Card className="border-2 border-ffect-light bg-ffect-light/5">
                 <CardContent className="p-4 text-center flex flex-col items-center justify-center h-full">
                   <Clock className="w-10 h-10 text-ffect-medium mx-auto mb-3" />
-                  <h3 className="text-lg font-rawest font-bold text-ffect-medium mb-1">Dagdeel</h3>
+                  <h3 className="text-lg font-bold text-ffect-medium mb-1">Dagdeel</h3>
                   <p className="text-muted-foreground mb-3">3 uren</p>
                   <div className="text-2xl font-bold text-foreground mb-1">€ 590</div>
                 </CardContent>
@@ -42,7 +42,7 @@ export default function TarievenPage() {
               <Card className="border-2 border-ffect-medium bg-ffect-medium/5">
                 <CardContent className="p-4 text-center flex flex-col items-center justify-center h-full">
                   <Calendar className="w-10 h-10 text-ffect-medium mx-auto mb-3" />
-                  <h3 className="text-lg font-rawest font-bold text-ffect-medium mb-1">Hele dag</h3>
+                  <h3 className="text-lg font-bold text-ffect-medium mb-1">Hele dag</h3>
                   <p className="text-ffect-medium mb-3">6 uren</p>
                   <div className="text-2xl font-bold text-foreground mb-1">€ 960</div>
                 </CardContent>
@@ -53,7 +53,7 @@ export default function TarievenPage() {
               <div className="flex items-start">
                 <Euro className="w-6 h-6 text-ffect-medium mr-3 mt-1 flex-shrink-0" />
                 <div>
-                  <h4 className="font-rawest font-semibold text-ffect-medium mb-2">Op maat gemaakt (€)</h4>
+                  <h4 className="font-semibold text-ffect-medium mb-2">Op maat gemaakt (€)</h4>
                   <p className="text-foreground leading-relaxed">
                     Omdat geen enkele situatie hetzelfde is, vind ik het belangrijk om te werken op een manier die
                     afgestemd is op jullie school of organisatie. Na een vrijblijvend kennismakingsgesprek bezorg ik

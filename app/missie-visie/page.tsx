@@ -33,7 +33,7 @@ export default function MissieVisiePage() {
   return (
     <div className="py-16 px-4">
       <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-rawest font-bold text-center mb-12 text-foreground">Missie & visie</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-foreground">Missie & visie</h1>
 
         <div className="space-y-8">
           <Card className="border-ffect-light/20 bg-card text-card-foreground">
@@ -77,7 +77,7 @@ export default function MissieVisiePage() {
 
           {/* New section for the 5 pillars */}
           <section className="py-8">
-            <h2 className="text-3xl font-rawest font-bold text-center mb-8 text-foreground">Onze 5 Pijlers</h2>
+            <h2 className="text-3xl font-bold text-center mb-8 text-foreground">Onze 5 Pijlers</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {pillars.map((pillar, index) => (
                 <Card
@@ -86,7 +86,7 @@ export default function MissieVisiePage() {
                 >
                   <CardContent className="p-6">
                     <pillar.icon className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                    <h3 className="text-lg font-rawest font-semibold mb-2">{pillar.title}</h3>
+                    <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
                     <p className="text-muted-foreground text-sm">{pillar.description}</p>
                   </CardContent>
                 </Card>
@@ -96,7 +96,7 @@ export default function MissieVisiePage() {
 
           <Card className="bg-gradient-to-r from-primary to-ffect-medium text-primary-foreground">
             <CardContent className="p-8 text-center">
-              <h2 className="text-2xl font-rawest font-bold mb-4">Onze kernvisie</h2>
+              <h2 className="text-2xl font-bold mb-4">Onze kernvisie</h2>
               <p className="text-xl leading-relaxed">
                 Samen bouwen aan een optimale werk- leer- en leefomgeving waarin persoonlijke groei en professionele
                 ontwikkeling hand in hand gaan, met de focus op een direct en duurzaam effect tot op de klasvloer.

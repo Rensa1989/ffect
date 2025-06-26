@@ -81,7 +81,7 @@ export default function AanbodPage() {
   return (
     <div className="py-16 px-4">
       <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl font-rawest font-bold text-center mb-12 text-foreground">Aanbod</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-foreground">Aanbod</h1>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {trainings.map((training) => (
@@ -115,9 +115,7 @@ export default function AanbodPage() {
                       />
                     </div>
                   </div>
-                  <h3 className="text-lg font-rawest font-semibold mb-2 text-foreground leading-tight">
-                    {training.title}
-                  </h3>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground leading-tight">{training.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{training.description}</p>
                 </CardContent>
               </Card>

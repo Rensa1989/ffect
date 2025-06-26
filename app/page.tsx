@@ -48,7 +48,7 @@ export default function HomePage() {
                 priority
               />
               <h1 className="text-5xl font-bold text-primary">
-                <span className="font-rawest">Ff</span>
+                <span className="">Ff</span>
                 <span>ect</span>
                 <span className="text-primary">.</span> {/* Capitalized F and ensured dot color */}
               </h1>
@@ -115,7 +115,7 @@ export default function HomePage() {
             <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground">
               <CardContent className="p-6">
                 <GraduationCap className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-lg font-rawest font-semibold mb-2">Praktijkervaring</h3>
+                <h3 className="text-lg font-semibold mb-2">Praktijkervaring</h3>
                 <p className="text-muted-foreground">Vanuit 25+ jaar ervaring in het onderwijs</p>
               </CardContent>
             </Card>
@@ -123,7 +123,7 @@ export default function HomePage() {
             <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground">
               <CardContent className="p-6">
                 <Users className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-lg font-rawest font-semibold mb-2">Interactief</h3>
+                <h3 className="text-lg font-semibold mb-2">Interactief</h3>
                 <p className="text-muted-foreground">Actieve betrokkenheid van alle deelnemers</p>
               </CardContent>
             </Card>
@@ -131,7 +131,7 @@ export default function HomePage() {
             <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground">
               <CardContent className="p-6">
                 <Target className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-lg font-rawest font-semibold mb-2">Op maat</h3>
+                <h3 className="text-lg font-semibold mb-2">Op maat</h3>
                 <p className="text-muted-foreground">Aangepast aan jullie specifieke behoeften</p>
               </CardContent>
             </Card>
@@ -139,7 +139,7 @@ export default function HomePage() {
             <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground">
               <CardContent className="p-6">
                 <BookOpen className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-lg font-rawest font-semibold mb-2">Wetenschappelijk</h3>
+                <h3 className="text-lg font-semibold mb-2">Wetenschappelijk</h3>
                 <p className="text-muted-foreground">Onderbouwd met wetenschappelijke kaders</p>
               </CardContent>
             </Card>

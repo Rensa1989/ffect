@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Open_Sans } from "next/font/google"
-import localFont from "next/font/local"
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
@@ -14,19 +13,6 @@ const openSans = Open_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"], // Added more weights for flexibility
   variable: "--font-open-sans",
-})
-
-// Configure local font for Rawest
-const rawest = localFont({
-  src: [
-    {
-      path: "../public/fonts/rawest-medium.ttf", // Aangepaste bestandsnaam
-      weight: "500", // Assuming medium weight
-      style: "normal",
-    },
-  ],
-  variable: "--font-rawest",
-  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -133,7 +119,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${openSans.className} ${rawest.variable}`}>
+      <body className={`${openSans.className}`}>
         <ScrollToTop />
         <Header />
         <main className="min-h-screen">{children}</main>

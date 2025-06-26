@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-rawest font-semibold mb-4">Contact</h4>
+            <h4 className="font-semibold mb-4">Contact</h4>
             <div className="text-primary-foreground space-y-1 text-left">
               <p>Bert Vanhees</p>
               <p>Kelbergenstraat 97</p>
@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-rawest font-semibold mb-4">Diensten</h4>
+            <h4 className="font-semibold mb-4">Diensten</h4>
             <div className="text-primary-foreground space-y-2 text-left">
               <Link href="/aanbod" className="block hover:text-white transition-colors">
                 Opleidingen
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-rawest font-semibold mb-4">Juridisch</h4>
+            <h4 className="font-semibold mb-4">Juridisch</h4>
             <div className="text-primary-foreground space-y-2 text-left">
               <Link href="/privacy-policy" className="block hover:text-white transition-colors">
                 Privacybeleid

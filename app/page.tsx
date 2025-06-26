@@ -1,17 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import {
-  GraduationCap,
-  Users,
-  Target,
-  BookOpen,
-  Lightbulb,
-  Sparkles,
-  Handshake,
-  Compass,
-  CheckCircle,
-} from "lucide-react"
+import { GraduationCap, Users, Target, BookOpen, Lightbulb, Sparkles, Handshake, Compass, CheckCircle } from 'lucide-react'
 import Image from "next/image"
 import type { Metadata } from "next"
 import Logo from "@/components/logo" // Import the new Logo component
@@ -130,7 +120,9 @@ export default function HomePage() {
       {/* Subtle Logo Section */}
       <section className="py-8 px-4 bg-ffect-light/5 border-t border-b border-ffect-light/20" aria-hidden="true">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="opacity-30">
+          <div className="opacity-5">
+            {" "}
+            {/* Made even more subtle */}
             <Image src="/images/logo-dark.png" alt="" width={60} height={60} className="h-12 w-12 mx-auto" />{" "}
             {/* Only icon for subtle section */}
           </div>
@@ -198,6 +190,21 @@ export default function HomePage() {
               )
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Kernvisie section - moved from Missie & Visie and restyled */}
+      <section className="py-16 px-4 bg-primary text-primary-foreground">
+        <div className="container mx-auto max-w-4xl">
+          <Card className="bg-transparent border-none shadow-none text-primary-foreground">
+            <CardContent className="p-8 text-center">
+              <h2 className="text-2xl font-bold mb-4">Onze kernvisie</h2>
+              <p className="text-xl leading-relaxed">
+                Samen bouwen aan een optimale werk- leer- en leefomgeving waarin persoonlijke groei en professionele
+                ontwikkeling hand in hand gaan, met de focus op een direct en duurzaam effect tot op de klasvloer.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>

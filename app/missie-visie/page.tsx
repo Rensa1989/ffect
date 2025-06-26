@@ -1,6 +1,35 @@
 import { Card, CardContent } from "@/components/ui/card"
+import { Lightbulb, Sparkles, Handshake, Compass, CheckCircle } from 'lucide-react'
+import Image from "next/image" // Import Image component
 
-// Removed pillars data as it's now on the homepage
+// Data for the 5 pillars (copied from missie-visie/page.tsx)
+const pillars = [
+  {
+    icon: Lightbulb,
+    title: "Ambitieus",
+    description: "Uitgedaagd worden om talenten te ontdekken, herkennen, erkennen en verder te ontwikkelen.",
+  },
+  {
+    icon: Sparkles,
+    title: "Motiverend",
+    description: "Interactieve benadering met kaders, handvaten en wetenschappelijk onderzoek als onderbouwing.",
+  },
+  {
+    icon: Handshake,
+    title: "Onderscheidend",
+    description: "Ervaringsgericht, waarbij alle deelnemers actief betrokken worden voor diepere verankering.",
+  },
+  {
+    icon: Compass,
+    title: "Relevant",
+    description: "Op maat aangepast aan de specifieke behoeften en uitdagingen van jullie organisatie.",
+  },
+  {
+    icon: CheckCircle,
+    title: "Echt en eenvoudig",
+    description: "Direct en blijvend effect tot op de klasvloer, met focus op toepasbaarheid.",
+  },
+]
 
 export default function MissieVisiePage() {
   return (
@@ -11,6 +40,17 @@ export default function MissieVisiePage() {
         <div className="space-y-8">
           <Card className="border-ffect-light/20 bg-card text-card-foreground">
             <CardContent className="p-8">
+              {/* New image for Missie & Visie page */}
+              <div className="mb-8">
+                <Image
+                  src="/placeholder.svg" // Placeholder image
+                  alt="Illustratie van onderwijs en samenwerking"
+                  width={800}
+                  height={400}
+                  className="w-full h-auto rounded-lg object-cover"
+                />
+              </div>
+
               <div className="prose prose-lg max-w-none text-left">
                 <p className="text-foreground leading-relaxed mb-6">
                   De maatschappij is in volle verandering en dit brengt heel wat teweeg. Samen op weg gaan, elkaar
@@ -51,26 +91,30 @@ export default function MissieVisiePage() {
             </CardContent>
           </Card>
 
-          {/* Removed the 5 Pillars section from here as it's moved to the homepage */}
+          {/* The 5 Pillars section is now on the homepage, so it's removed from here. */}
           {/* <section className="py-8">
             <h2 className="text-3xl font-bold text-center mb-8 text-foreground">Onze 5 Pijlers</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pillars.map((pillar, index) => (
-                <Card
-                  key={index}
-                  className="text-center border-effect-light/20 hover:border-effect-medium/40 transition-colors bg-card text-card-foreground"
-                >
-                  <CardContent className="p-6">
-                    <pillar.icon className="w-12 h-12 text-effect-medium mx-auto mb-4" aria-hidden="true" />
-                    <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
-                    <p className="text-muted-foreground text-sm">{pillar.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+              {pillars.map((pillar, index) => {
+                const Icon = pillar.icon
+                return (
+                  <Card
+                    key={index}
+                    className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground"
+                  >
+                    <CardContent className="p-6">
+                      <Icon className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
+                      <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
+                      <p className="text-muted-foreground text-sm">{pillar.description}</p>
+                    </CardContent>
+                  </Card>
+                )
+              })}
             </div>
           </section> */}
 
-          <Card className="bg-gradient-to-r from-primary to-effect-medium text-primary-foreground">
+          {/* The Kernvisie section is now on the homepage, so it's removed from here. */}
+          {/* <Card className="bg-gradient-to-r from-primary to-ffect-medium text-primary-foreground">
             <CardContent className="p-8 text-center">
               <h2 className="text-2xl font-bold mb-4">Onze kernvisie</h2>
               <p className="text-xl leading-relaxed">
@@ -78,7 +122,7 @@ export default function MissieVisiePage() {
                 ontwikkeling hand in hand gaan, met de focus op een direct en duurzaam effect tot op de klasvloer.
               </p>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </div>

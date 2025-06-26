@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Lightbulb, Sparkles, Handshake, Compass, CheckCircle } from 'lucide-react'
+import { Lightbulb, Sparkles, Handshake, Compass, CheckCircle } from "lucide-react"
 import Image from "next/image" // Import Image component
 
 // Data for the 5 pillars (copied from missie-visie/page.tsx)
@@ -40,15 +40,17 @@ export default function MissieVisiePage() {
         <div className="space-y-8">
           <Card className="border-ffect-light/20 bg-card text-card-foreground">
             <CardContent className="p-8">
-              {/* New image for Missie & Visie page */}
+              {/* New image for Missie & Visie page, styled like training detail pages */}
               <div className="mb-8">
-                <Image
-                  src="/placeholder.svg" // Placeholder image
-                  alt="Illustratie van onderwijs en samenwerking"
-                  width={800}
-                  height={400}
-                  className="w-full h-auto rounded-lg object-cover"
-                />
+                <div className="w-full h-48 rounded-lg mb-4 overflow-hidden">
+                  <Image
+                    src="/images/missie-visie-banner.jpeg" // New image
+                    alt="Meisje kijkt door een verrekijker, symbool voor visie en toekomst"
+                    width={800}
+                    height={400}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
 
               <div className="prose prose-lg max-w-none text-left">
@@ -92,37 +94,7 @@ export default function MissieVisiePage() {
           </Card>
 
           {/* The 5 Pillars section is now on the homepage, so it's removed from here. */}
-          {/* <section className="py-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-foreground">Onze 5 Pijlers</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pillars.map((pillar, index) => {
-                const Icon = pillar.icon
-                return (
-                  <Card
-                    key={index}
-                    className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground"
-                  >
-                    <CardContent className="p-6">
-                      <Icon className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                      <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
-                      <p className="text-muted-foreground text-sm">{pillar.description}</p>
-                    </CardContent>
-                  </Card>
-                )
-              })}
-            </div>
-          </section> */}
-
           {/* The Kernvisie section is now on the homepage, so it's removed from here. */}
-          {/* <Card className="bg-gradient-to-r from-primary to-ffect-medium text-primary-foreground">
-            <CardContent className="p-8 text-center">
-              <h2 className="text-2xl font-bold mb-4">Onze kernvisie</h2>
-              <p className="text-xl leading-relaxed">
-                Samen bouwen aan een optimale werk- leer- en leefomgeving waarin persoonlijke groei en professionele
-                ontwikkeling hand in hand gaan, met de focus op een direct en duurzaam effect tot op de klasvloer.
-              </p>
-            </CardContent>
-          </Card> */}
         </div>
       </div>
     </div>

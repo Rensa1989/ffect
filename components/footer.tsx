@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="mb-4">
-              <Logo variant="light" iconWidth={40} wordmarkWidth={80} height={40} />{" "}
+              <Logo variant="light" iconWidth={40} wordmarkWidth={80} height={40} gap={4} />{" "}
               {/* Use light variant for dark background */}
             </div>
             <p className="text-primary-foreground text-left">

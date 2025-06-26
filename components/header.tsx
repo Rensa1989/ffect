@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X } from 'lucide-react'
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Logo from "@/components/logo" // Import the new Logo component
 
@@ -24,8 +24,8 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
-            <Logo variant="light" iconWidth={30} wordmarkWidth={60} height={30} />{" "}
-            {/* Smaller size for navigation bar */}
+            <Logo variant="light" iconWidth={24} wordmarkWidth={48} height={24} gap={2} />{" "}
+            {/* Smaller size for navigation bar, adjusted gap */}
           </Link>
 
           {/* Desktop Navigation */}

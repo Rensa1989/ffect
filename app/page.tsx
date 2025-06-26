@@ -1,7 +1,17 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { GraduationCap, Users, Target, BookOpen, Lightbulb, Sparkles, Handshake, Compass, CheckCircle } from 'lucide-react'
+import {
+  GraduationCap,
+  Users,
+  Target,
+  BookOpen,
+  Lightbulb,
+  Sparkles,
+  Handshake,
+  Compass,
+  CheckCircle,
+} from "lucide-react"
 import Image from "next/image"
 import type { Metadata } from "next"
 import Logo from "@/components/logo" // Import the new Logo component
@@ -68,9 +78,11 @@ export default function HomePage() {
 
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <header className="mb-8">
-            <div className="flex items-center justify-center gap-6 mb-4 flex-wrap">
-              <Logo variant="dark" iconWidth={80} wordmarkWidth={160} height={80} />{" "}
-              {/* Use dark variant for light background */}
+            <div className="flex items-center justify-center gap-8 mb-4 flex-wrap">
+              {" "}
+              {/* Increased gap for more space */}
+              <Logo variant="dark" iconWidth={80} wordmarkWidth={160} height={80} gap={8} />{" "}
+              {/* Use dark variant for light background, increased gap */}
             </div>
             <p className="text-xl text-muted-foreground mb-8">
               Interactieve opleidingen en trajecten voor het onderwijs

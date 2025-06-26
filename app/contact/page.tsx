@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { MapPin, Phone, Mail } from "lucide-react"
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3" // Import reCAPTCHA hook
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

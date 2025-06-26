@@ -58,18 +58,18 @@ export default function CookieConsent() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4">
-      <Card className="max-w-4xl mx-auto border-ffect-medium/20 shadow-lg">
+      <Card className="max-w-4xl mx-auto border-ffect-medium/20 shadow-lg bg-card text-card-foreground">
         <CardContent className="p-6">
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center gap-2">
               <Cookie className="w-5 h-5 text-ffect-medium" />
-              <h3 className="font-semibold text-gray-900">Cookie-instellingen</h3>
+              <h3 className="font-semibold text-foreground">Cookie-instellingen</h3>
             </div>
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setShowBanner(false)}
-              className="text-gray-500 hover:text-gray-700"
+              className="text-muted-foreground hover:text-foreground"
             >
               <X className="w-4 h-4" />
             </Button>
@@ -77,31 +77,31 @@ export default function CookieConsent() {
 
           {!showSettings ? (
             <>
-              <p className="text-sm text-gray-700 mb-4">
+              <p className="text-sm text-foreground mb-4">
                 Wij gebruiken cookies om uw ervaring op onze website te verbeteren en om te voldoen aan de Belgische
                 wetgeving. Door op "Alles accepteren" te klikken, stemt u in met het gebruik van alle cookies. U kunt uw
                 voorkeuren ook aanpassen.
               </p>
-              <p className="text-xs text-gray-600 mb-4">
+              <p className="text-xs text-muted-foreground mb-4">
                 Meer informatie vindt u in ons{" "}
-                <Link href="/privacy-policy" className="text-ffect-dark hover:text-ffect-medium underline">
+                <Link href="/privacy-policy" className="text-primary hover:text-ffect-medium underline">
                   privacybeleid
                 </Link>
                 .
               </p>
               <div className="flex flex-wrap gap-2">
-                <Button onClick={acceptAll} className="bg-ffect-dark hover:bg-ffect-medium text-white">
+                <Button onClick={acceptAll} className="bg-primary hover:bg-ffect-medium text-primary-foreground">
                   Alles accepteren
                 </Button>
                 <Button
                   onClick={() => setShowSettings(true)}
                   variant="outline"
-                  className="border-ffect-medium text-ffect-dark hover:bg-ffect-light/10"
+                  className="border-ffect-medium text-primary hover:bg-ffect-light/10"
                 >
                   <Settings className="w-4 h-4 mr-2" />
                   Instellingen
                 </Button>
-                <Button onClick={rejectAll} variant="outline" className="text-gray-600 hover:text-gray-800">
+                <Button onClick={rejectAll} variant="outline" className="text-muted-foreground hover:text-foreground">
                   Alleen noodzakelijke
                 </Button>
               </div>
@@ -111,15 +111,15 @@ export default function CookieConsent() {
               <div className="space-y-4 mb-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-medium text-gray-900">Noodzakelijke cookies</h4>
-                    <p className="text-xs text-gray-600">Vereist voor de basisfunctionaliteit van de website</p>
+                    <h4 className="font-medium text-foreground">Noodzakelijke cookies</h4>
+                    <p className="text-xs text-muted-foreground">Vereist voor de basisfunctionaliteit van de website</p>
                   </div>
                   <input type="checkbox" checked={true} disabled className="rounded" />
                 </div>
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-medium text-gray-900">Analytische cookies</h4>
-                    <p className="text-xs text-gray-600">Helpen ons de website te verbeteren</p>
+                    <h4 className="font-medium text-foreground">Analytische cookies</h4>
+                    <p className="text-xs text-muted-foreground">Helpen ons de website te verbeteren</p>
                   </div>
                   <input
                     type="checkbox"
@@ -130,8 +130,8 @@ export default function CookieConsent() {
                 </div>
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-medium text-gray-900">Marketing cookies</h4>
-                    <p className="text-xs text-gray-600">Voor gepersonaliseerde advertenties</p>
+                    <h4 className="font-medium text-foreground">Marketing cookies</h4>
+                    <p className="text-xs text-muted-foreground">Voor gepersonaliseerde advertenties</p>
                   </div>
                   <input
                     type="checkbox"
@@ -142,7 +142,7 @@ export default function CookieConsent() {
                 </div>
               </div>
               <div className="flex gap-2">
-                <Button onClick={acceptSelected} className="bg-ffect-dark hover:bg-ffect-medium text-white">
+                <Button onClick={acceptSelected} className="bg-primary hover:bg-ffect-medium text-primary-foreground">
                   Voorkeuren opslaan
                 </Button>
                 <Button onClick={() => setShowSettings(false)} variant="outline">

@@ -1,40 +1,20 @@
 import type React from "react"
 import type { Metadata } from "next"
-import localFont from "next/font/local" // Import localFont
+import { Open_Sans } from "next/font/google" // Changed to Open_Sans
+import localFont from "next/font/local"
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import SocialButtons from "@/components/social-buttons"
 import ScrollToTop from "@/components/scroll-to-top"
 import CookieConsent from "@/components/cookie-consent"
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3" // Import reCAPTCHA provider
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
 
-// Configure local font for Roboto Condensed
-const robotoCondensed = localFont({
-  src: [
-    {
-      path: "../public/fonts/Roboto_Condensed-Thin.ttf",
-      weight: "100",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Roboto_Condensed-Light.ttf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Roboto_Condensed-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Roboto_Condensed-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-  ],
-  variable: "--font-roboto",
-  display: "swap",
+// Configure Open Sans from Google Fonts
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"], // Added more weights for flexibility
+  variable: "--font-open-sans",
 })
 
 // Configure local font for Rawest
@@ -154,7 +134,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${robotoCondensed.variable} ${rawest.variable} font-roboto`}>
+      <body className={`${openSans.className} ${rawest.variable}`}>
         <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}>
           <ScrollToTop />
           <Header />

@@ -48,8 +48,8 @@ export default function HomePage() {
                 priority
               />
               <h1 className="text-5xl font-bold text-primary">
-                <span className="font-rawest font-mono">Ff</span>
-                <span className="font-roboto">ect</span>
+                <span className="font-rawest">Ff</span>
+                <span>ect</span>
                 <span className="text-primary">.</span> {/* Capitalized F and ensured dot color */}
               </h1>
             </div>
@@ -66,9 +66,9 @@ export default function HomePage() {
               geïnteresseerde onderwijsprofessionals.
             </p>
             <p className="text-lg leading-relaxed mb-6">
-              Steeds vanuit <strong className="font-medium">eigenpraktijkervaring</strong>, een duidelijke{" "}
-              <strong className="font-medium">visie</strong> en{" "}
-              <strong className="font-medium">wetenschappelijke kaders</strong> als fundament.
+              Steeds vanuit <strong className="font-semibold">eigenpraktijkervaring</strong>, een duidelijke{" "}
+              <strong className="font-semibold">visie</strong> en{" "}
+              <strong className="font-semibold">wetenschappelijke kaders</strong> als fundament.
             </p>
             <p className="text-lg leading-relaxed mb-8">
               Zijn jullie op zoek naar een interactieve studiedag voor jullie team, scholengroep of lezing voor ouders?

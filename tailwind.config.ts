@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ["var(--font-roboto)", "sans-serif"],
+        "open-sans": ["var(--font-open-sans)", "sans-serif"], // Changed to Open Sans
         rawest: ["var(--font-rawest)", "sans-serif"],
       },
       colors: {
@@ -70,10 +70,6 @@ const config: Config = {
           light: "#E5FFD5", // Main light color
           medium: "#004751", // Main dark color
           dark: "#3B193D", // First dark accent
-          // Additional bijkleuren can be added here if needed for direct use
-          // e.g., 'accent1-light': '#EBD8D6', 'accent1-dark': '#3B193D',
-          // 'accent2-light': '#D6C8F0', 'accent2-dark': '#2C114F',
-          // 'accent3-light': '#DAEAFD', 'accent3-dark': '#1D1F3F',
         },
       },
       borderRadius: {

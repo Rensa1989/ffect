@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Open_Sans } from "next/font/google" // Changed to Open_Sans
+import { Open_Sans } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
 import Header from "@/components/header"

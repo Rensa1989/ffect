@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { MapPin, Phone, Mail } from "lucide-react"
+import Link from "next/link" // Import Link for the terms and conditions
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -17,6 +18,7 @@ export default function ContactPage() {
     school: "",
     message: "",
     newsletter: false,
+    agreedToTerms: false, // New state for terms and conditions
   })
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [responseMessage, setResponseMessage] = useState("")
@@ -26,11 +28,19 @@ export default function ContactPage() {
     setStatus("loading")
     setResponseMessage("")
 
+    if (!formData.agreedToTerms) {
+      setStatus("error")
+      setResponseMessage("U moet akkoord gaan met de algemene voorwaarden.")
+      return
+    }
+
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://formspree.io/f/xgvypqgj", {
+        // Formspree endpoint
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json", // Important for AJAX submission to Formspree
         },
         body: JSON.stringify(formData),
       })
@@ -39,11 +49,15 @@ export default function ContactPage() {
 
       if (response.ok) {
         setStatus("success")
-        setResponseMessage(data.message)
-        setFormData({ name: "", email: "", school: "", message: "", newsletter: false }) // Clear form
+        setResponseMessage("Bericht succesvol verzonden! We nemen zo snel mogelijk contact met u op.")
+        setFormData({ name: "", email: "", school: "", message: "", newsletter: false, agreedToTerms: false }) // Clear form
       } else {
         setStatus("error")
-        setResponseMessage(data.message || "Er is een onbekende fout opgetreden.")
+        setResponseMessage(
+          data.errors
+            ? data.errors.map((err: any) => err.message).join(", ")
+            : "Er is een onbekende fout opgetreden bij het verzenden van uw bericht.",
+        )
       }
     } catch (error) {
       console.error("Fout bij verzenden contactformulier:", error)
@@ -184,11 +198,33 @@ export default function ContactPage() {
                   </label>
                 </div>
 
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="agreedToTerms"
+                    checked={formData.agreedToTerms}
+                    onCheckedChange={(checked) => setFormData({ ...formData, agreedToTerms: checked as boolean })}
+                    required // Make the checkbox required
+                    className="border-foreground data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                  />
+                  <label htmlFor="agreedToTerms" className="text-sm text-foreground">
+                    Ik ga akkoord met de{" "}
+                    <Link
+                      href="/algemene-voorwaarden"
+                      className="text-primary hover:text-ffect-medium underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      algemene voorwaarden
+                    </Link>{" "}
+                    *
+                  </label>
+                </div>
+
                 <Button
                   type="submit"
                   size="lg"
                   className="w-full bg-primary hover:bg-ffect-medium text-primary-foreground"
-                  disabled={status === "loading"}
+                  disabled={status === "loading" || !formData.agreedToTerms} // Disable if not agreed
                 >
                   {status === "loading" ? "Verzenden..." : "Verstuur bericht"}
                 </Button>

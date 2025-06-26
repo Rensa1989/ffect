@@ -15,23 +15,7 @@ const transporter = nodemailer.createTransport({
 export async function POST(request: Request) {
   try {
     const formData = await request.json()
-    const { name, email, school, message, newsletter, recaptchaToken } = formData
-
-    // 1. Verify reCAPTCHA token
-    const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY
-    if (!recaptchaSecretKey) {
-      console.error("RECAPTCHA_SECRET_KEY is not set.")
-      return NextResponse.json({ message: "Server configuration error." }, { status: 500 })
-    }
-
-    const recaptchaVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecretKey}&response=${recaptchaToken}`
-    const recaptchaResponse = await fetch(recaptchaVerifyUrl, { method: "POST" })
-    const recaptchaData = await recaptchaResponse.json()
-
-    if (!recaptchaData.success || recaptchaData.score < 0.5) {
-      console.error("reCAPTCHA verification failed:", recaptchaData)
-      return NextResponse.json({ message: "reCAPTCHA verification failed. Please try again." }, { status: 400 })
-    }
+    const { name, email, school, message, newsletter } = formData
 
     // 2. Send email if reCAPTCHA is successful
     const mailOptions = {
@@ -39,13 +23,13 @@ export async function POST(request: Request) {
       to: "bert@ffect.be", // Recipient email address
       subject: `Nieuw contactformulier van ${name} (${school})`,
       html: `
-        <p><strong>Naam:</strong> ${name}</p>
-        <p><strong>E-mail:</strong> ${email}</p>
-        <p><strong>School/Organisatie:</strong> ${school}</p>
-        <p><strong>Bericht:</strong></p>
-        <p>${message}</p>
-        <p><strong>Nieuwsbrief aanmelden:</strong> ${newsletter ? "Ja" : "Nee"}</p>
-      `,
+      <p><strong>Naam:</strong> ${name}</p>
+      <p><strong>E-mail:</strong> ${email}</p>
+      <p><strong>School/Organisatie:</strong> ${school}</p>
+      <p><strong>Bericht:</strong></p>
+      <p>${message}</p>
+      <p><strong>Nieuwsbrief aanmelden:</strong> ${newsletter ? "Ja" : "Nee"}</p>
+    `,
     }
 
     await transporter.sendMail(mailOptions)

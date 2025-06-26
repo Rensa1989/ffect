@@ -8,7 +8,6 @@ import Footer from "@/components/footer"
 import SocialButtons from "@/components/social-buttons"
 import ScrollToTop from "@/components/scroll-to-top"
 import CookieConsent from "@/components/cookie-consent"
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
 
 // Configure Open Sans from Google Fonts
 const openSans = Open_Sans({
@@ -135,14 +134,12 @@ export default function RootLayout({
         />
       </head>
       <body className={`${openSans.className} ${rawest.variable}`}>
-        <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}>
-          <ScrollToTop />
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <SocialButtons />
-          <Footer />
-          <CookieConsent />
-        </GoogleReCaptchaProvider>
+        <ScrollToTop />
+        <Header />
+        <main className="min-h-screen">{children}</main>
+        <SocialButtons />
+        <Footer />
+        <CookieConsent />
       </body>
     </html>
   )

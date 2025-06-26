@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { MapPin, Phone, Mail } from "lucide-react"
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -22,29 +21,18 @@ export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [responseMessage, setResponseMessage] = useState("")
 
-  const { executeRecaptcha } = useGoogleReCaptcha()
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus("loading")
     setResponseMessage("")
 
-    if (!executeRecaptcha) {
-      console.error("reCAPTCHA not yet available.")
-      setResponseMessage("reCAPTCHA is not ready. Please try again.")
-      setStatus("error")
-      return
-    }
-
     try {
-      const recaptchaToken = await executeRecaptcha("contact_form_submit")
-
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...formData, recaptchaToken }),
+        body: JSON.stringify(formData),
       })
 
       const data = await response.json()
@@ -194,20 +182,6 @@ export default function ContactPage() {
                   <label htmlFor="newsletter" className="text-sm text-foreground">
                     Ik wil graag de nieuwsbrief ontvangen
                   </label>
-                </div>
-
-                <div className="bg-muted p-4 rounded-lg">
-                  <p className="text-sm text-muted-foreground mb-2">
-                    Deze site is beschermd door reCAPTCHA en het Google{" "}
-                    <a href="#" className="text-primary hover:text-ffect-medium hover:underline">
-                      Privacybeleid
-                    </a>{" "}
-                    en{" "}
-                    <a href="#" className="text-primary hover:text-ffect-medium hover:underline">
-                      Servicevoorwaarden
-                    </a>{" "}
-                    zijn van toepassing.
-                  </p>
                 </div>
 
                 <Button

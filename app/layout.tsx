@@ -20,7 +20,7 @@ const openSans = Open_Sans({
 const rawest = localFont({
   src: [
     {
-      path: "../public/fonts/._rawest-medium-webfont-NrSNnJcxzecT5HlylIpJKkEcqT1wzN.ttf", // Use the exact uploaded filename
+      path: "../public/fonts/rawest-medium.ttf", // Aangepaste bestandsnaam
       weight: "500", // Assuming medium weight
       style: "normal",
     },

@@ -40,7 +40,7 @@ export default function MissieVisiePage() {
         <div className="space-y-8">
           <Card className="border-ffect-light/20 bg-card text-card-foreground">
             <CardContent className="p-8">
-              {/* New image for Missie & Visie page, styled like training detail pages */}
+              {/* New image for Missie & Visie page */}
               <div className="mb-8">
                 <div className="w-full h-48 rounded-lg mb-4 overflow-hidden">
                   <Image
@@ -93,8 +93,18 @@ export default function MissieVisiePage() {
             </CardContent>
           </Card>
 
-          {/* The 5 Pillars section is now on the homepage, so it's removed from here. */}
-          {/* The Kernvisie section is now on the homepage, so it's removed from here. */}
+          {/* Kernvisie section for Missie & Visie page */}
+          <section className="py-8 px-4">
+            <Card className="bg-ffect-light text-ffect-medium border-none shadow-none">
+              <CardContent className="p-8 text-center">
+                <h2 className="text-2xl font-bold mb-4">Onze kernvisie</h2>
+                <p className="text-xl leading-relaxed">
+                  Samen bouwen aan een optimale werk- leer- en leefomgeving waarin persoonlijke groei en professionele
+                  ontwikkeling hand in hand gaan, met de focus op een direct en duurzaam effect tot op de klasvloer.
+                </p>
+              </CardContent>
+            </Card>
+          </section>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { MapPin, Phone, Mail } from "lucide-react"
-import Link from "next/link" // Import Link for the terms and conditions
+import Link from "next/link"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -18,7 +18,8 @@ export default function ContactPage() {
     school: "",
     message: "",
     newsletter: false,
-    agreedToTerms: false, // New state for terms and conditions
+    agreedToTerms: false,
+    _honey: "", // Honeypot field
   })
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [responseMessage, setResponseMessage] = useState("")
@@ -35,12 +36,10 @@ export default function ContactPage() {
     }
 
     try {
-      const response = await fetch("https://formspree.io/f/xgvypqgj", {
-        // Formspree endpoint
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json", // Important for AJAX submission to Formspree
         },
         body: JSON.stringify(formData),
       })
@@ -49,15 +48,19 @@ export default function ContactPage() {
 
       if (response.ok) {
         setStatus("success")
-        setResponseMessage("Bericht succesvol verzonden! We nemen zo snel mogelijk contact met u op.")
-        setFormData({ name: "", email: "", school: "", message: "", newsletter: false, agreedToTerms: false }) // Clear form
+        setResponseMessage(data.message)
+        setFormData({
+          name: "",
+          email: "",
+          school: "",
+          message: "",
+          newsletter: false,
+          agreedToTerms: false,
+          _honey: "",
+        }) // Clear form
       } else {
         setStatus("error")
-        setResponseMessage(
-          data.errors
-            ? data.errors.map((err: any) => err.message).join(", ")
-            : "Er is een onbekende fout opgetreden bij het verzenden van uw bericht.",
-        )
+        setResponseMessage(data.message || "Er is een onbekende fout opgetreden.")
       }
     } catch (error) {
       console.error("Fout bij verzenden contactformulier:", error)
@@ -186,6 +189,15 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {/* Honeypot field */}
+                <input
+                  type="text"
+                  name="_honey"
+                  style={{ display: "none" }}
+                  value={formData._honey}
+                  onChange={(e) => setFormData({ ...formData, _honey: e.target.value })}
+                />
+
                 <div className="flex items-center space-x-2">
                   <Checkbox
                     id="newsletter"
@@ -203,7 +215,7 @@ export default function ContactPage() {
                     id="agreedToTerms"
                     checked={formData.agreedToTerms}
                     onCheckedChange={(checked) => setFormData({ ...formData, agreedToTerms: checked as boolean })}
-                    required // Make the checkbox required
+                    required
                     className="border-foreground data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                   />
                   <label htmlFor="agreedToTerms" className="text-sm text-foreground">
@@ -224,7 +236,7 @@ export default function ContactPage() {
                   type="submit"
                   size="lg"
                   className="w-full bg-primary hover:bg-ffect-medium text-primary-foreground"
-                  disabled={status === "loading" || !formData.agreedToTerms} // Disable if not agreed
+                  disabled={status === "loading" || !formData.agreedToTerms}
                 >
                   {status === "loading" ? "Verzenden..." : "Verstuur bericht"}
                 </Button>

@@ -14,6 +14,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    school: "",
     message: "",
     newsletter: false,
   })
@@ -112,6 +113,20 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full focus:ring-ffect-medium focus:border-ffect-medium"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="school" className="block text-sm font-medium text-gray-700 mb-2">
+                    School / Organisatie *
+                  </label>
+                  <Input
+                    id="school"
+                    type="text"
+                    required
+                    value={formData.school}
+                    onChange={(e) => setFormData({ ...formData, school: e.target.value })}
                     className="w-full focus:ring-ffect-medium focus:border-ffect-medium"
                   />
                 </div>

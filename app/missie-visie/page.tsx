@@ -1,5 +1,33 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Target } from "lucide-react"
+import { Target, Lightbulb, Sparkles, Handshake, Compass, CheckCircle } from "lucide-react"
+
+const pillars = [
+  {
+    icon: Lightbulb,
+    title: "Ambitieus",
+    description: "Uitgedaagd worden om talenten te ontdekken, herkennen, erkennen en verder te ontwikkelen.",
+  },
+  {
+    icon: Sparkles,
+    title: "Motiverend",
+    description: "Interactieve benadering met kaders, handvaten en wetenschappelijk onderzoek als onderbouwing.",
+  },
+  {
+    icon: Handshake,
+    title: "Onderscheidend",
+    description: "Ervaringsgericht, waarbij alle deelnemers actief betrokken worden voor diepere verankering.",
+  },
+  {
+    icon: Compass,
+    title: "Relevant",
+    description: "Op maat aangepast aan de specifieke behoeften en uitdagingen van jullie organisatie.",
+  },
+  {
+    icon: CheckCircle,
+    title: "Echt en eenvoudig",
+    description: "Direct en blijvend effect tot op de klasvloer, met focus op toepasbaarheid.",
+  },
+]
 
 export default function MissieVisiePage() {
   return (
@@ -26,10 +54,18 @@ export default function MissieVisiePage() {
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
+                  Via vijf pijlers tracht ik de visie vorm te geven. Bij het opstellen van deze kernwaarden die de
+                  organisatie typeert, heb ik me gebaseerd op het AMORE-principe (ambitieus, motiverend, onderscheidend,
+                  relevant, echt en eenvoudig).
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mb-6">
                   In de aangeboden opleidingen staat persoonlijke groei centraal. Telkens vanuit het geloof dat iedereen
-                  het potentieel heeft om te excelleren. Steeds met een interactieve benadering, waarbij we gebruik
-                  maken van kaders, handvaten en wetenschappelijk onderzoek om elke opleiding te onderbouwen. Dit zorgt
-                  ervoor dat de kennis en vaardigheden die worden opgedaan direct en blijvend effect hebben.
+                  het potentieel heeft om te excelleren en uitgedaagd moet worden om talenten te ontdekken, herkennen,
+                  erkennen en verder te ontwikkelen. Een gevoel van competentie is hierin essentieel. We werken steeds
+                  met een interactieve benadering, waarbij we gebruik maken van kaders, handvaten en wetenschappelijk
+                  onderzoek om elke opleiding te onderbouwen. Dit zorgt ervoor dat de kennis en vaardigheden die worden
+                  opgedaan direct en blijvend effect hebben.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -47,6 +83,25 @@ export default function MissieVisiePage() {
               </div>
             </CardContent>
           </Card>
+
+          {/* New section for the 5 pillars */}
+          <section className="py-8">
+            <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">Onze 5 Pijlers</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {pillars.map((pillar, index) => (
+                <Card
+                  key={index}
+                  className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors"
+                >
+                  <CardContent className="p-6">
+                    <pillar.icon className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
+                    <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
+                    <p className="text-gray-600 text-sm">{pillar.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
 
           <Card className="bg-gradient-to-r from-ffect-dark to-ffect-medium text-white">
             <CardContent className="p-8">

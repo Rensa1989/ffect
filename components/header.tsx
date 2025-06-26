@@ -20,24 +20,35 @@ export default function Header() {
   ]
 
   return (
-    <header className="bg-white shadow-sm border-b sticky top-0 z-50">
+    <header className="bg-gray-900 shadow-sm border-b border-gray-700 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
-            <Image src="/images/final-logo.png" alt="ffect." width={60} height={60} className="h-12 w-12" />
+            <Image
+              src="/images/final-logo.png"
+              alt="ffect."
+              width={60}
+              height={60}
+              className="h-12 w-12 brightness-0 invert"
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => (
-              <Link key={item.name} href={item.href} className="text-gray-700 hover:text-ffect-dark transition-colors">
+              <Link key={item.name} href={item.href} className="text-gray-300 hover:text-white transition-colors">
                 {item.name}
               </Link>
             ))}
           </nav>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="sm" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="md:hidden text-gray-300 hover:text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
@@ -49,7 +60,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-gray-700 hover:text-ffect-dark transition-colors"
+                className="block py-2 text-gray-300 hover:text-white transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

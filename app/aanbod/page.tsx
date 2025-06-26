@@ -71,7 +71,7 @@ export default function AanbodPage() {
   return (
     <div className="py-16 px-4">
       <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">Ons Aanbod</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">Aanbod</h1>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {trainings.map((training) => (
@@ -100,9 +100,11 @@ export default function AanbodPage() {
                         src={
                           training.id === 1
                             ? `/images/training-1-new.jpg`
-                            : training.id === 10
-                              ? `/images/training-10-updated.jpg`
-                              : `/images/training-${training.id}.jpg`
+                            : training.id === 6 // Changed for training ID 6
+                              ? `/images/agressief-gedrag-hoe-reageren2.jpg`
+                              : training.id === 10
+                                ? `/images/training-10-updated.jpg`
+                                : `/images/training-${training.id}.jpg`
                         }
                         alt={training.title}
                         width={300}

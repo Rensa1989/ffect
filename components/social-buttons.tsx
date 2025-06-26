@@ -10,7 +10,7 @@ export default function SocialButtons() {
         className="bg-white/80 backdrop-blur-sm hover:bg-gray-100 border border-gray-300 shadow-lg"
         asChild
       >
-        <a href="#" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/profile.php?id=61577468472614" target="_blank" rel="noopener noreferrer">
           <Facebook className="h-4 w-4" />
         </a>
       </Button>

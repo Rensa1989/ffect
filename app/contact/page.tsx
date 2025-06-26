@@ -21,7 +21,8 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
+    // Handle form submission. For actual email sending, consider using a Server Action or an external service
+    // that sends to bert@ffect.be.
     console.log("Form submitted:", formData)
   }
 
@@ -36,7 +37,7 @@ export default function ContactPage() {
             <Mail className="w-6 h-6 text-ffect-medium" />
             <div className="w-8 h-0.5 bg-ffect-light"></div>
           </div>
-          <p className="text-ffect-dark italic">"Samen bouwen aan betere onderwijservaringen"</p>
+          <p className="text-ffect-dark italic">"Samen op weg en elkaar inspireren"</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">

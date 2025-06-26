@@ -29,22 +29,28 @@ export default function TarievenPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="grid md:grid-cols-2 gap-4 mb-8">
+              {" "}
+              {/* Reduced gap */}
               <Card className="border-2 border-ffect-light bg-ffect-light/5">
-                <CardContent className="p-6 text-center">
-                  <Clock className="w-12 h-12 text-ffect-medium mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-ffect-dark mb-2">Dagdeel</h3>
-                  <p className="text-gray-600 mb-4">3 uren</p>
-                  <div className="text-3xl font-bold text-ffect-dark mb-2">€ 590*</div>
+                <CardContent className="p-4 text-center">
+                  {" "}
+                  {/* Reduced padding */}
+                  <Clock className="w-10 h-10 text-ffect-medium mx-auto mb-3" /> {/* Reduced icon size */}
+                  <h3 className="text-lg font-bold text-ffect-dark mb-1">Dagdeel</h3> {/* Reduced font size */}
+                  <p className="text-gray-600 mb-3">3 uren</p> {/* Reduced margin */}
+                  <div className="text-2xl font-bold text-ffect-dark mb-1">€ 590</div> {/* Reduced font size */}
                 </CardContent>
               </Card>
-
               <Card className="border-2 border-ffect-medium bg-ffect-medium/5">
-                <CardContent className="p-6 text-center">
-                  <Calendar className="w-12 h-12 text-ffect-dark mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-ffect-dark mb-2">Hele dag</h3>
-                  <p className="text-ffect-medium mb-4">6 uren</p>
-                  <div className="text-3xl font-bold text-ffect-dark mb-2">€ 1090*</div>
+                <CardContent className="p-4 text-center">
+                  {" "}
+                  {/* Reduced padding */}
+                  <Calendar className="w-10 h-10 text-ffect-dark mx-auto mb-3" /> {/* Reduced icon size */}
+                  <h3 className="text-lg font-bold text-ffect-dark mb-1">Hele dag</h3> {/* Reduced font size */}
+                  <p className="text-ffect-medium mb-3">6 uren</p> {/* Reduced margin */}
+                  <div className="text-2xl font-bold text-ffect-dark mb-1">€ 960</div>{" "}
+                  {/* Updated price and reduced font size */}
                 </CardContent>
               </Card>
             </div>
@@ -53,7 +59,7 @@ export default function TarievenPage() {
               <div className="flex items-start">
                 <Euro className="w-6 h-6 text-ffect-medium mr-3 mt-1 flex-shrink-0" />
                 <div>
-                  <h4 className="font-semibold text-ffect-dark mb-2">Op maat gemaakt</h4>
+                  <h4 className="font-semibold text-ffect-dark mb-2">Op maat gemaakt (€)</h4> {/* Updated title */}
                   <p className="text-gray-700 leading-relaxed">
                     Omdat geen enkele situatie hetzelfde is, vind ik het belangrijk om te werken op een manier die
                     afgestemd is op jullie school of organisatie. Na een vrijblijvend kennismakingsgesprek bezorg ik
@@ -70,15 +76,18 @@ export default function TarievenPage() {
               </p>
 
               <Link href="/contact">
-                <Button size="lg" className="bg-ffect-dark hover:bg-ffect-medium">
+                <Button size="lg" className="bg-ffect-dark hover:bg-ffect-medium text-white">
+                  {" "}
+                  {/* Ensured text-white */}
                   Vraag offerte aan
                 </Button>
               </Link>
             </div>
 
-            <div className="text-sm text-gray-500 text-center">
+            {/* Removed the disclaimer sentence */}
+            {/* <div className="text-sm text-gray-500 text-center">
               *Vermelde prijs is een basisprijs en kan afwijken naargelang locatie of groepssamenstelling
-            </div>
+            </div> */}
           </CardContent>
         </Card>
       </div>

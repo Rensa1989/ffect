@@ -12,7 +12,7 @@ export default function Header() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Over mezelf", href: "/over-mezelf" },
-    { name: "Missie & Visie", href: "/missie-visie" },
+    { name: "Missie & visie", href: "/missie-visie" },
     { name: "Aanbod", href: "/aanbod" },
     { name: "Tarieven", href: "/tarieven" },
     { name: "Contact", href: "/contact" },
@@ -55,7 +55,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t">
+          <nav className="md:hidden py-4 border-t border-gray-700">
             {navigation.map((item) => (
               <Link
                 key={item.name}

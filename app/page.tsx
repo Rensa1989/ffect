@@ -44,15 +44,17 @@ export default function HomePage() {
                 alt="ffect. logo - Interactieve opleidingen voor onderwijsprofessionals"
                 width={80}
                 height={80}
-                className="h-16 w-16"
+                className="h-16 w-16 text-ffect-dark" // Apply text color to logo
                 priority
               />
-              <h1 className="text-5xl font-bold text-gray-900">
-                ffect<span className="text-ffect-dark">.</span>
+              <h1 className="text-5xl font-bold text-ffect-dark">
+                {" "}
+                {/* Apply text color to h1 */}
+                Ffect<span className="text-ffect-dark">.</span> {/* Capitalized F and ensured dot color */}
               </h1>
             </div>
             <p className="text-xl text-gray-600 mb-8">
-              Interactieve opleidingen en trajecten met direct en blijvend effect
+              Interactieve opleidingen en trajecten voor het onderwijs {/* Updated slogan */}
             </p>
           </header>
 

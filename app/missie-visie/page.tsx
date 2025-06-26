@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Target, Lightbulb, Sparkles, Handshake, Compass, CheckCircle } from "lucide-react"
+import { Lightbulb, Sparkles, Handshake, Compass, CheckCircle } from "lucide-react"
 
 const pillars = [
   {
@@ -33,16 +33,17 @@ export default function MissieVisiePage() {
   return (
     <div className="py-16 px-4">
       <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">Missie & Visie</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">Missie & visie</h1>
 
-        <div className="text-center mb-8">
+        {/* Removed the slogan here */}
+        {/* <div className="text-center mb-8">
           <div className="flex justify-center items-center space-x-4 mb-4">
             <div className="w-8 h-0.5 bg-ffect-light"></div>
             <Target className="w-6 h-6 text-ffect-medium" />
             <div className="w-8 h-0.5 bg-ffect-light"></div>
           </div>
           <p className="text-ffect-dark italic">"Samen bouwen aan optimale leeromgevingen"</p>
-        </div>
+        </div> */}
 
         <div className="space-y-8">
           <Card className="border-ffect-light/20">
@@ -108,8 +109,8 @@ export default function MissieVisiePage() {
               <div className="text-center">
                 <h2 className="text-2xl font-bold mb-4">Onze kernvisie</h2>
                 <p className="text-xl leading-relaxed">
-                  "Samen bouwen aan een optimale werk- leer- en leefomgeving waarin persoonlijke groei en professionele
-                  ontwikkeling hand in hand gaan, met de focus op een direct en duurzaam effect tot op de klasvloer."
+                  Samen bouwen aan een optimale werk- leer- en leefomgeving waarin persoonlijke groei en professionele
+                  ontwikkeling hand in hand gaan, met de focus op een direct en duurzaam effect tot op de klasvloer.
                 </p>
               </div>
             </CardContent>

@@ -20,7 +20,7 @@ const reviews = [
   {
     id: 4,
     text: "Bedankt voor de presentatie en zeker ook bedankt voor de interessante bijscholing. We zijn er bij ons op school direct mee aan de slag gegaan. We gaan je zeker op de hoogte houden.",
-    author: "Schoolteam",
+    author: "Onderwijsteam", // Changed from Schoolteam
   },
   {
     id: 5,
@@ -30,7 +30,7 @@ const reviews = [
   {
     id: 6,
     text: "Bedankt voor de zeer interessante dag. We appreciëren het enorm dat je van je programma bent afgeweken toen je merkte dat de noden elders lagen. Dit was wat we nodig hadden en gaf ons echt veel vertrouwen. Je hebt onze batterijen terug opgeladen!",
-    author: "Schoolteam",
+    author: "Onderwijsteam", // Changed from Schoolteam
   },
   {
     id: 7,
@@ -62,8 +62,8 @@ export default function ReviewsPage() {
           </div>
           <p className="text-ffect-dark italic">"Ervaringen van onderwijsprofessionals"</p>
         </div>
-        <p className="text-xl text-gray-600 text-center mb-12">Wat deelnemers zeggen over onze vormingen</p>
-
+        <p className="text-xl text-gray-600 text-center mb-12">Wat deelnemers zeggen over de vormingen</p>{" "}
+        {/* Updated slogan */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((review) => (
             <Card
@@ -87,7 +87,6 @@ export default function ReviewsPage() {
             </Card>
           ))}
         </div>
-
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-6">Wil je ook een review achterlaten na je vorming?</p>
           <a href="/contact" className="text-ffect-dark hover:text-ffect-medium font-medium">

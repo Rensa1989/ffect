@@ -32,7 +32,8 @@ export default function OverMezelfPage() {
                     />
                   </div>
                   <h2 className="text-2xl font-bold text-gray-900">Bert Vanhees</h2>
-                  <p className="text-ffect-dark font-medium">Onderwijsexpert & Coach</p>
+                  {/* Removed the title below the photo */}
+                  {/* <p className="text-ffect-dark font-medium">Onderwijsexpert & Coach</p> */}
                 </div>
               </div>
 

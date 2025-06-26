@@ -1,9 +1,20 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { GraduationCap, Users, Target, BookOpen } from "lucide-react"
+import {
+  GraduationCap,
+  Users,
+  Target,
+  BookOpen,
+  Lightbulb,
+  Sparkles,
+  Handshake,
+  Compass,
+  CheckCircle,
+} from "lucide-react"
 import Image from "next/image"
 import type { Metadata } from "next"
+import Logo from "@/components/logo" // Import the new Logo component
 
 export const metadata: Metadata = {
   title: "Home",
@@ -14,6 +25,35 @@ export const metadata: Metadata = {
     description: "Interactieve opleidingen en trajecten met direct en blijvend effect tot op de klasvloer.",
   },
 }
+
+// Data for the 5 pillars (copied from missie-visie/page.tsx)
+const pillars = [
+  {
+    icon: Lightbulb,
+    title: "Ambitieus",
+    description: "Uitgedaagd worden om talenten te ontdekken, herkennen, erkennen en verder te ontwikkelen.",
+  },
+  {
+    icon: Sparkles,
+    title: "Motiverend",
+    description: "Interactieve benadering met kaders, handvaten en wetenschappelijk onderzoek als onderbouwing.",
+  },
+  {
+    icon: Handshake,
+    title: "Onderscheidend",
+    description: "Ervaringsgericht, waarbij alle deelnemers actief betrokken worden voor diepere verankering.",
+  },
+  {
+    icon: Compass,
+    title: "Relevant",
+    description: "Op maat aangepast aan de specifieke behoeften en uitdagingen van jullie organisatie.",
+  },
+  {
+    icon: CheckCircle,
+    title: "Echt en eenvoudig",
+    description: "Direct en blijvend effect tot op de klasvloer, met focus op toepasbaarheid.",
+  },
+]
 
 export default function HomePage() {
   return (
@@ -39,22 +79,11 @@ export default function HomePage() {
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <header className="mb-8">
             <div className="flex items-center justify-center gap-6 mb-4 flex-wrap">
-              <Image
-                src="/images/final-logo.png"
-                alt="ffect. logo - Interactieve opleidingen voor onderwijsprofessionals"
-                width={80}
-                height={80}
-                className="h-16 w-16 text-primary" // Apply text color to logo
-                priority
-              />
-              <h1 className="text-5xl font-bold text-primary">
-                <span className="">Ff</span>
-                <span>ect</span>
-                <span className="text-primary">.</span> {/* Capitalized F and ensured dot color */}
-              </h1>
+              <Logo variant="dark" iconWidth={80} wordmarkWidth={160} height={80} />{" "}
+              {/* Use dark variant for light background */}
             </div>
             <p className="text-xl text-muted-foreground mb-8">
-              Interactieve opleidingen en trajecten voor het onderwijs {/* Updated slogan */}
+              Interactieve opleidingen en trajecten voor het onderwijs
             </p>
           </header>
 
@@ -66,8 +95,8 @@ export default function HomePage() {
               geïnteresseerde onderwijsprofessionals.
             </p>
             <p className="text-lg leading-relaxed mb-6">
-              Steeds vanuit <strong className="font-semibold">eigenpraktijkervaring</strong>, een duidelijke{" "}
-              <strong className="font-semibold">visie</strong> en{" "}
+              Steeds vanuit <strong className="font-semibold">eigenpraktijkervaring</strong>, een duidelijke
+              <strong className="font-semibold">visie</strong> en
               <strong className="font-semibold">wetenschappelijke kaders</strong> als fundament.
             </p>
             <p className="text-lg leading-relaxed mb-8">
@@ -102,7 +131,8 @@ export default function HomePage() {
       <section className="py-8 px-4 bg-ffect-light/5 border-t border-b border-ffect-light/20" aria-hidden="true">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="opacity-30">
-            <Image src="/images/final-logo.png" alt="" width={60} height={60} className="h-12 w-12 mx-auto" />
+            <Image src="/images/logo-dark.png" alt="" width={60} height={60} className="h-12 w-12 mx-auto" />{" "}
+            {/* Only icon for subtle section */}
           </div>
         </div>
       </section>
@@ -143,6 +173,27 @@ export default function HomePage() {
                 <p className="text-muted-foreground">Onderbouwd met wetenschappelijke kaders</p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* 5 Pillars Section (moved from Missie & Visie) */}
+      <section className="py-16 px-4 bg-background">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-8 text-foreground">Onze 5 Pijlers</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {pillars.map((pillar, index) => (
+              <Card
+                key={index}
+                className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground"
+              >
+                <CardContent className="p-6">
+                  {pillar.icon({ className: "w-12 h-12 text-ffect-medium mx-auto mb-4", ariaHidden: true })}
+                  <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
+                  <p className="text-muted-foreground text-sm">{pillar.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

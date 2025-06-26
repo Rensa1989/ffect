@@ -1,33 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Lightbulb, Sparkles, Handshake, Compass, CheckCircle } from "lucide-react"
 
-const pillars = [
-  {
-    icon: Lightbulb,
-    title: "Ambitieus",
-    description: "Uitgedaagd worden om talenten te ontdekken, herkennen, erkennen en verder te ontwikkelen.",
-  },
-  {
-    icon: Sparkles,
-    title: "Motiverend",
-    description: "Interactieve benadering met kaders, handvaten en wetenschappelijk onderzoek als onderbouwing.",
-  },
-  {
-    icon: Handshake,
-    title: "Onderscheidend",
-    description: "Ervaringsgericht, waarbij alle deelnemers actief betrokken worden voor diepere verankering.",
-  },
-  {
-    icon: Compass,
-    title: "Relevant",
-    description: "Op maat aangepast aan de specifieke behoeften en uitdagingen van jullie organisatie.",
-  },
-  {
-    icon: CheckCircle,
-    title: "Echt en eenvoudig",
-    description: "Direct en blijvend effect tot op de klasvloer, met focus op toepasbaarheid.",
-  },
-]
+// Removed pillars data as it's now on the homepage
 
 export default function MissieVisiePage() {
   return (
@@ -36,7 +9,7 @@ export default function MissieVisiePage() {
         <h1 className="text-4xl font-bold text-center mb-12 text-foreground">Missie & visie</h1>
 
         <div className="space-y-8">
-          <Card className="border-ffect-light/20 bg-card text-card-foreground">
+          <Card className="border-effect-light/20 bg-card text-card-foreground">
             <CardContent className="p-8">
               <div className="prose prose-lg max-w-none text-left">
                 <p className="text-foreground leading-relaxed mb-6">
@@ -45,9 +18,12 @@ export default function MissieVisiePage() {
                 </p>
 
                 <p className="text-foreground leading-relaxed mb-6">
-                  Via vijf pijlers tracht ik de visie vorm te geven. Bij het opstellen van deze kernwaarden die de
-                  organisatie typeert, heb ik me gebaseerd op het AMORE-principe (ambitieus, motiverend, onderscheidend,
-                  relevant, echt en eenvoudig).
+                  Via <strong className="font-semibold">vijf pijlers</strong> tracht ik de visie vorm te geven. Bij het
+                  opstellen van deze kernwaarden die de organisatie typeert, heb ik me gebaseerd op het{" "}
+                  <strong className="font-semibold">
+                    AMORE-principe (ambitieus, motiverend, onderscheidend, relevant, echt en eenvoudig)
+                  </strong>
+                  .
                 </p>
 
                 <p className="text-foreground leading-relaxed mb-6">
@@ -75,26 +51,26 @@ export default function MissieVisiePage() {
             </CardContent>
           </Card>
 
-          {/* New section for the 5 pillars */}
-          <section className="py-8">
+          {/* Removed the 5 Pillars section from here as it's moved to the homepage */}
+          {/* <section className="py-8">
             <h2 className="text-3xl font-bold text-center mb-8 text-foreground">Onze 5 Pijlers</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {pillars.map((pillar, index) => (
                 <Card
                   key={index}
-                  className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground"
+                  className="text-center border-effect-light/20 hover:border-effect-medium/40 transition-colors bg-card text-card-foreground"
                 >
                   <CardContent className="p-6">
-                    <pillar.icon className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
+                    <pillar.icon className="w-12 h-12 text-effect-medium mx-auto mb-4" aria-hidden="true" />
                     <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
                     <p className="text-muted-foreground text-sm">{pillar.description}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
-          </section>
+          </section> */}
 
-          <Card className="bg-gradient-to-r from-primary to-ffect-medium text-primary-foreground">
+          <Card className="bg-gradient-to-r from-primary to-effect-medium text-primary-foreground">
             <CardContent className="p-8 text-center">
               <h2 className="text-2xl font-bold mb-4">Onze kernvisie</h2>
               <p className="text-xl leading-relaxed">

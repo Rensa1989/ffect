@@ -25,16 +25,16 @@ export async function POST(request: Request) {
 
     const mailOptions = {
       from: process.env.EMAIL_FROM,
-      to: "bert@ffect.be", // Recipient email address
+      to: "bert@ffect.be", // Recipient email address - THIS IS ALREADY SET TO BERT@FFECT.BE
       subject: `Nieuw contactformulier van ${name} (${school})`,
       html: `
-      <p><strong>Naam:</strong> ${name}</p>
-      <p><strong>E-mail:</strong> ${email}</p>
-      <p><strong>School/Organisatie:</strong> ${school}</p>
-      <p><strong>Bericht:</strong></p>
-      <p>${message}</p>
-      <p><strong>Nieuwsbrief aanmelden:</strong> ${newsletter ? "Ja" : "Nee"}</p>
-    `,
+        <p><strong>Naam:</strong> ${name}</p>
+        <p><strong>E-mail:</strong> ${email}</p>
+        <p><strong>School/Organisatie:</strong> ${school}</p>
+        <p><strong>Bericht:</strong></p>
+        <p>${message}</p>
+        <p><strong>Nieuwsbrief aanmelden:</strong> ${newsletter ? "Ja" : "Nee"}</p>
+      `,
     }
 
     await transporter.sendMail(mailOptions)

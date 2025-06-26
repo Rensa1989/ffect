@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
+import Logo from "@/components/logo" // Import the new Logo component
 
 export default function Footer() {
   return (
@@ -9,13 +9,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="mb-4">
-              <Image
-                src="/images/final-logo.png"
-                alt="ffect."
-                width={60}
-                height={60}
-                className="h-12 w-12 brightness-0 invert"
-              />
+              <Logo variant="light" iconWidth={40} wordmarkWidth={80} height={40} />{" "}
+              {/* Use light variant for dark background */}
             </div>
             <p className="text-primary-foreground text-left">
               Interactieve opleidingen en trajecten met direct en blijvend effect tot op de klasvloer.

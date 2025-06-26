@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
+import Logo from "@/components/logo" // Import the new Logo component
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -24,13 +24,8 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
-            <Image
-              src="/images/final-logo.png"
-              alt="ffect."
-              width={60}
-              height={60}
-              className="h-12 w-12 brightness-0 invert"
-            />
+            <Logo variant="light" iconWidth={40} wordmarkWidth={80} height={40} />{" "}
+            {/* Use light variant for dark background */}
           </Link>
 
           {/* Desktop Navigation */}

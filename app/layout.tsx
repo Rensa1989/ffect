@@ -1,31 +1,50 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Roboto } from "next/font/google"
-import localFont from "next/font/local" // Import localFont for Rawest
+import localFont from "next/font/local" // Import localFont
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import SocialButtons from "@/components/social-buttons"
 import ScrollToTop from "@/components/scroll-to-top"
 import CookieConsent from "@/components/cookie-consent"
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3" // Import reCAPTCHA provider
 
-const inter = Inter({ subsets: ["latin"] })
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-  variable: "--font-roboto",
-})
-
-// Configure local font for Rawest
-// You need to place the Rawest font files (e.g., Rawest-Regular.woff2) in public/fonts
-const rawest = localFont({
+// Configure local font for Roboto Condensed
+const robotoCondensed = localFont({
   src: [
     {
-      path: "../public/fonts/Rawest-Regular.woff2", // Adjust path if your font file is named differently
+      path: "../public/fonts/Roboto_Condensed-Thin.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Roboto_Condensed-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Roboto_Condensed-Regular.ttf",
       weight: "400",
       style: "normal",
     },
-    // Add other weights/styles if available
+    {
+      path: "../public/fonts/Roboto_Condensed-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+  variable: "--font-roboto",
+  display: "swap",
+})
+
+// Configure local font for Rawest
+const rawest = localFont({
+  src: [
+    {
+      path: "../public/fonts/._rawest-medium-webfont-NrSNnJcxzecT5HlylIpJKkEcqT1wzN.ttf", // Use the exact uploaded filename
+      weight: "500", // Assuming medium weight
+      style: "normal",
+    },
   ],
   variable: "--font-rawest",
   display: "swap",
@@ -135,13 +154,15 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} ${roboto.className} ${rawest.variable}`}>
-        <ScrollToTop />
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <SocialButtons />
-        <Footer />
-        <CookieConsent />
+      <body className={`${robotoCondensed.variable} ${rawest.variable} font-roboto`}>
+        <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}>
+          <ScrollToTop />
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <SocialButtons />
+          <Footer />
+          <CookieConsent />
+        </GoogleReCaptchaProvider>
       </body>
     </html>
   )

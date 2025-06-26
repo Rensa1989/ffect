@@ -51,9 +51,9 @@ const reviews = [
 
 export default function ReviewsPage() {
   return (
-    <div className="py-16 px-4 font-roboto">
+    <div className="py-16 px-4">
       <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl font-bold text-center mb-4 text-gray-900 font-rawest">Reviews</h1>
+        <h1 className="text-4xl font-rawest font-bold text-center mb-4 text-foreground">Reviews</h1>
         <div className="text-center mb-8">
           <div className="flex justify-center items-center space-x-4 mb-4">
             <div className="w-8 h-0.5 bg-ffect-light"></div>
@@ -62,13 +62,13 @@ export default function ReviewsPage() {
           </div>
           <p className="text-ffect-dark italic">"Ervaringen van onderwijsprofessionals"</p>
         </div>
-        <p className="text-xl text-gray-600 text-center mb-12">Wat deelnemers zeggen over de vormingen</p>{" "}
+        <p className="text-xl text-muted-foreground text-center mb-12">Wat deelnemers zeggen over de vormingen</p>{" "}
         {/* Updated slogan */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((review) => (
             <Card
               key={review.id}
-              className="h-full border-ffect-light/20 hover:border-ffect-medium/40 transition-colors"
+              className="h-full border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground"
             >
               <CardContent className="p-6 flex flex-col h-full text-left">
                 <div className="flex items-center mb-4">
@@ -80,7 +80,7 @@ export default function ReviewsPage() {
                   </div>
                 </div>
 
-                <blockquote className="text-gray-700 leading-relaxed mb-4 flex-grow">"{review.text}"</blockquote>
+                <blockquote className="text-foreground leading-relaxed mb-4 flex-grow">"{review.text}"</blockquote>
 
                 <footer className="text-sm text-ffect-dark font-medium">— {review.author}</footer>
               </CardContent>
@@ -88,8 +88,8 @@ export default function ReviewsPage() {
           ))}
         </div>
         <div className="text-center mt-12">
-          <p className="text-gray-600 mb-6">Wil je ook een review achterlaten na je vorming?</p>
-          <a href="/contact" className="text-ffect-dark hover:text-ffect-medium font-medium">
+          <p className="text-muted-foreground mb-6">Wil je ook een review achterlaten na je vorming?</p>
+          <a href="/contact" className="text-primary hover:text-ffect-medium font-medium">
             Neem contact met ons op →
           </a>
         </div>

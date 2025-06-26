@@ -4,9 +4,9 @@ import { GraduationCap } from "lucide-react"
 
 export default function OverMezelfPage() {
   return (
-    <div className="py-16 px-4 font-roboto">
+    <div className="py-16 px-4">
       <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900 font-rawest">Over mezelf</h1>
+        <h1 className="text-4xl font-rawest font-bold text-center mb-12 text-foreground">Over mezelf</h1>
 
         <div className="text-center mb-8">
           <div className="flex justify-center items-center space-x-4 mb-4">
@@ -17,7 +17,7 @@ export default function OverMezelfPage() {
           <p className="text-ffect-dark italic">"25+ jaar ervaring in het onderwijs"</p>
         </div>
 
-        <Card className="overflow-hidden border-ffect-light/20">
+        <Card className="overflow-hidden border-ffect-light/20 bg-card text-card-foreground">
           <CardContent className="p-0">
             <div className="md:flex">
               <div className="md:w-1/3 p-8 bg-gradient-to-br from-ffect-light/10 to-ffect-medium/10 flex items-center justify-center">
@@ -31,14 +31,13 @@ export default function OverMezelfPage() {
                       className="rounded-full object-cover"
                     />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 font-rawest">Bert Vanhees</h2>
-                  {/* Removed the title below the photo */}
+                  <h2 className="text-2xl font-rawest font-bold text-foreground">Bert Vanhees</h2>
                 </div>
               </div>
 
               <div className="md:w-2/3 p-8">
                 <div className="prose prose-lg max-w-none text-left">
-                  <p className="text-gray-700 leading-relaxed mb-4">
+                  <p className="text-foreground leading-relaxed mb-4">
                     Mijn naam is Bert Vanhees. Ik werk sinds 1997 in het onderwijs, waar ik als leerkracht
                     beroepsgerichte vorming in het buitengewoon onderwijs startte. Nadien ging ik ook als leerkracht
                     algemene sociale vorming aan de slag. Hoofdzakelijk werkte ik in deze periode met jongeren met
@@ -46,22 +45,22 @@ export default function OverMezelfPage() {
                     binnen deze onderwijsvorm actief als intern leerlingbegeleider.
                   </p>
 
-                  <p className="text-gray-700 leading-relaxed mb-4">
+                  <p className="text-foreground leading-relaxed mb-4">
                     Na 11 jaar in het buitengewoon onderwijs, deed ik begeleidingen in het regulier onderwijs. Dit op
                     kleuter- en lager onderwijsniveau, secundair onderwijsniveau en op hogeschoolniveau.
                   </p>
 
-                  <p className="text-gray-700 leading-relaxed mb-4">
+                  <p className="text-foreground leading-relaxed mb-4">
                     Sinds deze periode deed ik ook ervaring op als gastspreker in verschillende hogescholen,
                     onderwijsnetten en vormingscentra.
                   </p>
 
-                  <p className="text-gray-700 leading-relaxed mb-4">
+                  <p className="text-foreground leading-relaxed mb-4">
                     Tijdens mijn loopbaan maakte ik ook als pedagogisch coördinator deel uit van een directieteam in het
                     gewoon secundair onderwijs.
                   </p>
 
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-foreground leading-relaxed">
                     Momenteel ben ik deeltijds werkzaam als leerondersteuner, waar ik vooral samen met scholen onderzoek
                     op welke manier extra ondersteuning en begeleiding mogelijk zijn om te voldoen aan de
                     onderwijsbehoeften van de leerlingen en de ondersteuningsbehoeften van het schoolteam.

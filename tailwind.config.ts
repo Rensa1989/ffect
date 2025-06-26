@@ -11,11 +11,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        // For Rawest, you need to place the font files (e.g., .woff2) in public/fonts
-        // and then configure next/font/local in app/layout.tsx
-        // For now, it will fall back to a generic sans-serif.
-        rawest: ["var(--font-rawest)", "sans-serif"],
         roboto: ["var(--font-roboto)", "sans-serif"],
+        rawest: ["var(--font-rawest)", "sans-serif"],
       },
       colors: {
         background: "hsl(var(--background))",
@@ -29,16 +26,8 @@ const config: Config = {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          50: "#f0f9f8",
-          100: "#d9f2f0",
-          200: "#b3e5e1",
-          300: "#78c5bb",
-          400: "#52b3c4",
-          500: "#506980",
-          600: "#455a6b",
-          700: "#3a4b56",
-          800: "#2f3c41",
-          900: "#242d2c",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -76,11 +65,15 @@ const config: Config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // ffect brand colors
+        // ffect brand colors based on new palette
         ffect: {
-          light: "#78c5bb",
-          medium: "#52b3c4",
-          dark: "#506980",
+          light: "#E5FFD5", // Main light color
+          medium: "#004751", // Main dark color
+          dark: "#3B193D", // First dark accent
+          // Additional bijkleuren can be added here if needed for direct use
+          // e.g., 'accent1-light': '#EBD8D6', 'accent1-dark': '#3B193D',
+          // 'accent2-light': '#D6C8F0', 'accent2-dark': '#2C114F',
+          // 'accent3-light': '#DAEAFD', 'accent3-dark': '#1D1F3F',
         },
       },
       borderRadius: {

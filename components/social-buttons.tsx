@@ -7,21 +7,21 @@ export default function SocialButtons() {
       <Button
         size="sm"
         variant="outline"
-        className="bg-white/80 backdrop-blur-sm hover:bg-gray-100 border border-gray-300 shadow-lg"
+        className="bg-card/80 backdrop-blur-sm hover:bg-muted border border-border shadow-lg"
         asChild
       >
         <a href="https://www.facebook.com/profile.php?id=61577468472614" target="_blank" rel="noopener noreferrer">
-          <Facebook className="h-4 w-4" />
+          <Facebook className="h-4 w-4 text-foreground" />
         </a>
       </Button>
       <Button
         size="sm"
         variant="outline"
-        className="bg-white/80 backdrop-blur-sm hover:bg-gray-100 border border-gray-300 shadow-lg"
+        className="bg-card/80 backdrop-blur-sm hover:bg-muted border border-border shadow-lg"
         asChild
       >
         <a href="#" target="_blank" rel="noopener noreferrer">
-          <Instagram className="h-4 w-4" />
+          <Instagram className="h-4 w-4 text-foreground" />
         </a>
       </Button>
     </div>

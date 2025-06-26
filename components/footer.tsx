@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12 font-roboto">
+    <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
@@ -17,14 +17,14 @@ export default function Footer() {
                 className="h-12 w-12 brightness-0 invert"
               />
             </div>
-            <p className="text-gray-300 text-left">
+            <p className="text-primary-foreground text-left">
               Interactieve opleidingen en trajecten met direct en blijvend effect tot op de klasvloer.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 font-rawest">Contact</h4>
-            <div className="text-gray-300 space-y-1 text-left">
+            <h4 className="font-rawest font-semibold mb-4">Contact</h4>
+            <div className="text-primary-foreground space-y-1 text-left">
               <p>Bert Vanhees</p>
               <p>Kelbergenstraat 97</p>
               <p>3290 Diest</p>
@@ -35,8 +35,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 font-rawest">Diensten</h4>
-            <div className="text-gray-300 space-y-2 text-left">
+            <h4 className="font-rawest font-semibold mb-4">Diensten</h4>
+            <div className="text-primary-foreground space-y-2 text-left">
               <Link href="/aanbod" className="block hover:text-white transition-colors">
                 Opleidingen
               </Link>
@@ -50,8 +50,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 font-rawest">Juridisch</h4>
-            <div className="text-gray-300 space-y-2 text-left">
+            <h4 className="font-rawest font-semibold mb-4">Juridisch</h4>
+            <div className="text-primary-foreground space-y-2 text-left">
               <Link href="/privacy-policy" className="block hover:text-white transition-colors">
                 Privacybeleid
               </Link>
@@ -63,7 +63,7 @@ export default function Footer() {
               <Link href="/contact">
                 <Button
                   variant="outline"
-                  className="text-gray-900 border-gray-300 hover:bg-gray-100 hover:text-gray-900 bg-white"
+                  className="text-primary bg-primary-foreground border-primary-foreground hover:bg-white hover:text-primary"
                 >
                   Contact opnemen
                 </Button>
@@ -72,7 +72,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
           <p>&copy; 2024 ffect. Alle rechten voorbehouden.</p>
         </div>
       </div>

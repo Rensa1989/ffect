@@ -17,22 +17,22 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen font-roboto">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-ffect-light/10 to-ffect-medium/10 py-20 px-4 relative overflow-hidden">
         {/* Educational Pattern Background */}
         <div className="absolute inset-0 opacity-5" aria-hidden="true">
           <div className="absolute top-10 left-10 transform rotate-12">
-            <GraduationCap className="w-16 h-16 text-ffect-dark" />
+            <GraduationCap className="w-16 h-16 text-primary" />
           </div>
           <div className="absolute top-20 right-20 transform -rotate-12">
-            <BookOpen className="w-12 h-12 text-ffect-dark" />
+            <BookOpen className="w-12 h-12 text-primary" />
           </div>
           <div className="absolute bottom-20 left-20 transform rotate-45">
-            <Users className="w-14 h-14 text-ffect-dark" />
+            <Users className="w-14 h-14 text-primary" />
           </div>
           <div className="absolute bottom-10 right-10 transform -rotate-45">
-            <Target className="w-10 h-10 text-ffect-dark" />
+            <Target className="w-10 h-10 text-primary" />
           </div>
         </div>
 
@@ -44,38 +44,41 @@ export default function HomePage() {
                 alt="ffect. logo - Interactieve opleidingen voor onderwijsprofessionals"
                 width={80}
                 height={80}
-                className="h-16 w-16 text-ffect-dark" // Apply text color to logo
+                className="h-16 w-16 text-primary" // Apply text color to logo
                 priority
               />
-              <h1 className="text-5xl font-bold text-ffect-dark font-rawest">
-                Ffect<span className="text-ffect-dark">.</span> {/* Capitalized F and ensured dot color */}
+              <h1 className="text-5xl font-bold text-primary">
+                <span className="font-rawest">Ff</span>
+                <span className="font-roboto">ect</span>
+                <span className="text-primary">.</span> {/* Capitalized F and ensured dot color */}
               </h1>
             </div>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-muted-foreground mb-8">
               Interactieve opleidingen en trajecten voor het onderwijs {/* Updated slogan */}
             </p>
           </header>
 
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-8 text-left">
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+          <div className="bg-card rounded-lg shadow-lg p-8 mb-8 text-left text-card-foreground">
+            <p className="text-lg leading-relaxed mb-6">
               Interactieve opleidingen en trajecten met direct en blijvend effect tot op de klasvloer. De vormingen
               richten zich tot leerkrachten, leerlingbegeleiders, zorgcoördinatoren, directies,
               secretariaatsmedewerkers, CLB-medewerkers, internaatmedewerkers, maar ook tot ouders en alle andere
               geïnteresseerde onderwijsprofessionals.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Steeds vanuit <strong>eigenpraktijkervaring</strong>, een duidelijke <strong>visie</strong> en{" "}
-              <strong>wetenschappelijke kaders</strong> als fundament.
+            <p className="text-lg leading-relaxed mb-6">
+              Steeds vanuit <strong className="font-medium">eigenpraktijkervaring</strong>, een duidelijke{" "}
+              <strong className="font-medium">visie</strong> en{" "}
+              <strong className="font-medium">wetenschappelijke kaders</strong> als fundament.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
+            <p className="text-lg leading-relaxed mb-8">
               Zijn jullie op zoek naar een interactieve studiedag voor jullie team, scholengroep of lezing voor ouders?
               Neem dan zeker vrijblijvend contact op om af te stemmen hoe we samen een boeiende, inspirerende en
               kwalitatieve vorming kunnen realiseren.
             </p>
-            <p className="text-gray-600 mb-8">
+            <p className="text-muted-foreground mb-8">
               Voor meer concrete informatie over een vorming op jouw school of voor jouw organisatie kan je me bereiken
               via deze{" "}
-              <Link href="/contact" className="text-ffect-dark hover:text-ffect-medium underline font-medium">
+              <Link href="/contact" className="text-primary hover:text-ffect-medium underline font-medium">
                 contactgegevens
               </Link>
               .
@@ -83,7 +86,10 @@ export default function HomePage() {
 
             <div className="text-center">
               <Link href="/contact">
-                <Button size="lg" className="bg-ffect-dark hover:bg-ffect-medium text-white px-8 py-3 text-lg">
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-ffect-medium text-primary-foreground px-8 py-3 text-lg"
+                >
                   MAIL HIER
                 </Button>
               </Link>
@@ -102,39 +108,39 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-6xl">
           <h2 className="sr-only">Onze kernwaarden</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors">
+            <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground">
               <CardContent className="p-6">
                 <GraduationCap className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-lg font-semibold mb-2 font-rawest">Praktijkervaring</h3>
-                <p className="text-gray-600">Vanuit 25+ jaar ervaring in het onderwijs</p>
+                <h3 className="text-lg font-rawest font-semibold mb-2">Praktijkervaring</h3>
+                <p className="text-muted-foreground">Vanuit 25+ jaar ervaring in het onderwijs</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors">
+            <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground">
               <CardContent className="p-6">
                 <Users className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-lg font-semibold mb-2 font-rawest">Interactief</h3>
-                <p className="text-gray-600">Actieve betrokkenheid van alle deelnemers</p>
+                <h3 className="text-lg font-rawest font-semibold mb-2">Interactief</h3>
+                <p className="text-muted-foreground">Actieve betrokkenheid van alle deelnemers</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors">
+            <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground">
               <CardContent className="p-6">
                 <Target className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-lg font-semibold mb-2 font-rawest">Op maat</h3>
-                <p className="text-gray-600">Aangepast aan jullie specifieke behoeften</p>
+                <h3 className="text-lg font-rawest font-semibold mb-2">Op maat</h3>
+                <p className="text-muted-foreground">Aangepast aan jullie specifieke behoeften</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors">
+            <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors bg-card text-card-foreground">
               <CardContent className="p-6">
                 <BookOpen className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-lg font-semibold mb-2 font-rawest">Wetenschappelijk</h3>
-                <p className="text-gray-600">Onderbouwd met wetenschappelijke kaders</p>
+                <h3 className="text-lg font-rawest font-semibold mb-2">Wetenschappelijk</h3>
+                <p className="text-muted-foreground">Onderbouwd met wetenschappelijke kaders</p>
               </CardContent>
             </Card>
           </div>

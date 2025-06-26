@@ -292,20 +292,20 @@ export default function TrainingDetailPage({ params }: { params: { id: string } 
   }
 
   return (
-    <div className="py-16 px-4 font-roboto">
+    <div className="py-16 px-4">
       <div className="container mx-auto max-w-4xl">
         <Link href="/aanbod">
-          <Button variant="ghost" className="mb-8 hover:text-ffect-dark">
+          <Button variant="ghost" className="mb-8 hover:text-primary">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Terug naar aanbod
           </Button>
         </Link>
 
-        <Card className="border-ffect-light/20">
+        <Card className="border-ffect-light/20 bg-card text-card-foreground">
           <CardContent className="p-8">
             <div className="mb-8">
-              <h1 className="text-3xl font-bold text-gray-900 mb-4 font-rawest">{training.title}</h1>
-              <p className="text-xl text-ffect-dark font-medium">{training.subtitle}</p>
+              <h1 className="text-3xl font-rawest font-bold text-foreground mb-4">{training.title}</h1>
+              <p className="text-xl text-ffect-medium font-medium">{training.subtitle}</p>
             </div>
 
             <div className="mb-4">
@@ -330,7 +330,7 @@ export default function TrainingDetailPage({ params }: { params: { id: string } 
 
             <div className="prose prose-lg max-w-none mb-8 text-left">
               {training.description.split("\n\n").map((paragraph, index) => (
-                <p key={index} className="text-gray-700 leading-relaxed mb-4">
+                <p key={index} className="text-foreground leading-relaxed mb-4">
                   {paragraph}
                 </p>
               ))}
@@ -341,11 +341,11 @@ export default function TrainingDetailPage({ params }: { params: { id: string } 
                 <CardContent className="p-6 text-left">
                   <div className="flex items-center mb-4">
                     <Target className="w-6 h-6 text-ffect-medium mr-2" />
-                    <h3 className="text-lg font-semibold text-ffect-dark font-rawest">Doelen van deze vorming</h3>
+                    <h3 className="text-lg font-rawest font-semibold text-ffect-medium">Doelen van deze vorming</h3>
                   </div>
                   <ul className="space-y-2">
                     {training.goals.map((goal, index) => (
-                      <li key={index} className="text-gray-700 text-sm leading-relaxed">
+                      <li key={index} className="text-foreground text-sm leading-relaxed">
                         • {goal}
                       </li>
                     ))}
@@ -356,17 +356,17 @@ export default function TrainingDetailPage({ params }: { params: { id: string } 
               <Card className="bg-ffect-medium/10 border-ffect-medium/30">
                 <CardContent className="p-6 text-left">
                   <div className="flex items-center mb-4">
-                    <Users className="w-6 h-6 text-ffect-dark mr-2" />
-                    <h3 className="text-lg font-semibold text-ffect-dark font-rawest">Doelgroep</h3>
+                    <Users className="w-6 h-6 text-ffect-medium mr-2" />
+                    <h3 className="text-lg font-rawest font-semibold text-ffect-medium">Doelgroep</h3>
                   </div>
-                  <p className="text-gray-700 text-sm leading-relaxed">{training.targetGroup}</p>
+                  <p className="text-foreground text-sm leading-relaxed">{training.targetGroup}</p>
                 </CardContent>
               </Card>
             </div>
 
             <div className="mt-8 text-center">
               <Link href="/contact">
-                <Button size="lg" className="bg-ffect-dark hover:bg-ffect-medium text-white">
+                <Button size="lg" className="bg-primary hover:bg-ffect-medium text-primary-foreground">
                   Interesse? Neem contact op
                 </Button>
               </Link>

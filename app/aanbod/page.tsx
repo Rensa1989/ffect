@@ -79,17 +79,17 @@ const trainings = [
 
 export default function AanbodPage() {
   return (
-    <div className="py-16 px-4 font-roboto">
+    <div className="py-16 px-4">
       <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900 font-rawest">Aanbod</h1>
+        <h1 className="text-4xl font-rawest font-bold text-center mb-12 text-foreground">Aanbod</h1>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {trainings.map((training) => (
             <Link key={training.id} href={`/aanbod/${training.id}`}>
-              <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer relative border-ffect-light/20 hover:border-ffect-medium/40">
+              <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer relative border-ffect-light/20 hover:border-ffect-medium/40 bg-card text-card-foreground">
                 {training.popular && (
                   <div className="absolute top-4 right-4 z-10">
-                    <Badge className="bg-ffect-medium text-white flex items-center gap-1">
+                    <Badge className="bg-ffect-medium text-primary-foreground flex items-center gap-1">
                       <Star className="w-3 h-3 fill-current" />
                       Populair
                     </Badge>
@@ -115,10 +115,10 @@ export default function AanbodPage() {
                       />
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900 leading-tight font-rawest">
+                  <h3 className="text-lg font-rawest font-semibold mb-2 text-foreground leading-tight">
                     {training.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{training.description}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{training.description}</p>
                 </CardContent>
               </Card>
             </Link>

@@ -65,9 +65,9 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="py-16 px-4 font-roboto">
+    <div className="py-16 px-4">
       <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900 font-rawest">Contact</h1>
+        <h1 className="text-4xl font-rawest font-bold text-center mb-12 text-foreground">Contact</h1>
 
         <div className="text-center mb-8">
           <div className="flex justify-center items-center space-x-4 mb-4">
@@ -80,16 +80,16 @@ export default function ContactPage() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <Card className="border-ffect-light/20">
+          <Card className="border-ffect-light/20 bg-card text-card-foreground">
             <CardContent className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900 font-rawest">Contactgegevens</h2>
+              <h2 className="text-2xl font-rawest font-bold mb-6 text-foreground">Contactgegevens</h2>
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-6 h-6 text-ffect-medium mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Adres</h3>
-                    <p className="text-gray-700">
+                    <h3 className="font-semibold text-foreground mb-1">Adres</h3>
+                    <p className="text-foreground">
                       Bert Vanhees
                       <br />
                       Kelbergenstraat 97
@@ -102,34 +102,34 @@ export default function ContactPage() {
                 <div className="flex items-start space-x-4">
                   <Phone className="w-6 h-6 text-ffect-medium mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Telefoon</h3>
-                    <p className="text-gray-700">+32(0)495 50 84 15</p>
+                    <h3 className="font-semibold text-foreground mb-1">Telefoon</h3>
+                    <p className="text-foreground">+32(0)495 50 84 15</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
                   <Mail className="w-6 h-6 text-ffect-medium mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">E-mail</h3>
-                    <p className="text-gray-700">bert@ffect.be</p>
+                    <h3 className="font-semibold text-foreground mb-1">E-mail</h3>
+                    <p className="text-foreground">bert@ffect.be</p>
                   </div>
                 </div>
 
                 <div className="pt-4 border-t border-ffect-light/20">
-                  <p className="text-sm text-gray-600">BTW BE 0705.797.734</p>
+                  <p className="text-sm text-muted-foreground">BTW BE 0705.797.734</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Contact Form */}
-          <Card className="border-ffect-light/20">
+          <Card className="border-ffect-light/20 bg-card text-card-foreground">
             <CardContent className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900 font-rawest">Stuur een bericht</h2>
+              <h2 className="text-2xl font-rawest font-bold mb-6 text-foreground">Stuur een bericht</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                     Uw naam *
                   </label>
                   <Input
@@ -138,12 +138,12 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full focus:ring-ffect-medium focus:border-ffect-medium"
+                    className="w-full focus:ring-ffect-medium focus:border-ffect-medium bg-input text-foreground border-border"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                     Uw e-mail *
                   </label>
                   <Input
@@ -152,12 +152,12 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full focus:ring-ffect-medium focus:border-ffect-medium"
+                    className="w-full focus:ring-ffect-medium focus:border-ffect-medium bg-input text-foreground border-border"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="school" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="school" className="block text-sm font-medium text-foreground mb-2">
                     School / Organisatie *
                   </label>
                   <Input
@@ -166,12 +166,12 @@ export default function ContactPage() {
                     required
                     value={formData.school}
                     onChange={(e) => setFormData({ ...formData, school: e.target.value })}
-                    className="w-full focus:ring-ffect-medium focus:border-ffect-medium"
+                    className="w-full focus:ring-ffect-medium focus:border-ffect-medium bg-input text-foreground border-border"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                     Uw bericht *
                   </label>
                   <Textarea
@@ -180,7 +180,7 @@ export default function ContactPage() {
                     rows={6}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full focus:ring-ffect-medium focus:border-ffect-medium"
+                    className="w-full focus:ring-ffect-medium focus:border-ffect-medium bg-input text-foreground border-border"
                   />
                 </div>
 
@@ -189,20 +189,21 @@ export default function ContactPage() {
                     id="newsletter"
                     checked={formData.newsletter}
                     onCheckedChange={(checked) => setFormData({ ...formData, newsletter: checked as boolean })}
+                    className="border-foreground data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                   />
-                  <label htmlFor="newsletter" className="text-sm text-gray-700">
+                  <label htmlFor="newsletter" className="text-sm text-foreground">
                     Ik wil graag de nieuwsbrief ontvangen
                   </label>
                 </div>
 
-                <div className="bg-gray-100 p-4 rounded-lg">
-                  <p className="text-sm text-gray-600 mb-2">
+                <div className="bg-muted p-4 rounded-lg">
+                  <p className="text-sm text-muted-foreground mb-2">
                     Deze site is beschermd door reCAPTCHA en het Google{" "}
-                    <a href="#" className="text-ffect-dark hover:text-ffect-medium hover:underline">
+                    <a href="#" className="text-primary hover:text-ffect-medium hover:underline">
                       Privacybeleid
                     </a>{" "}
                     en{" "}
-                    <a href="#" className="text-ffect-dark hover:text-ffect-medium hover:underline">
+                    <a href="#" className="text-primary hover:text-ffect-medium hover:underline">
                       Servicevoorwaarden
                     </a>{" "}
                     zijn van toepassing.
@@ -212,7 +213,7 @@ export default function ContactPage() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-ffect-dark hover:bg-ffect-medium text-white"
+                  className="w-full bg-primary hover:bg-ffect-medium text-primary-foreground"
                   disabled={status === "loading"}
                 >
                   {status === "loading" ? "Verzenden..." : "Verstuur bericht"}

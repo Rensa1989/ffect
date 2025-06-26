@@ -9,7 +9,7 @@ export default function MissieVisiePage() {
         <h1 className="text-4xl font-bold text-center mb-12 text-foreground">Missie & visie</h1>
 
         <div className="space-y-8">
-          <Card className="border-effect-light/20 bg-card text-card-foreground">
+          <Card className="border-ffect-light/20 bg-card text-card-foreground">
             <CardContent className="p-8">
               <div className="prose prose-lg max-w-none text-left">
                 <p className="text-foreground leading-relaxed mb-6">

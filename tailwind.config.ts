@@ -10,6 +10,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // For Rawest, you need to place the font files (e.g., .woff2) in public/fonts
+        // and then configure next/font/local in app/layout.tsx
+        // For now, it will fall back to a generic sans-serif.
+        rawest: ["var(--font-rawest)", "sans-serif"],
+        roboto: ["var(--font-roboto)", "sans-serif"],
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

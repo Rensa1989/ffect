@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 text-white py-12 font-roboto">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
@@ -17,14 +17,14 @@ export default function Footer() {
                 className="h-12 w-12 brightness-0 invert"
               />
             </div>
-            <p className="text-gray-300">
+            <p className="text-gray-300 text-left">
               Interactieve opleidingen en trajecten met direct en blijvend effect tot op de klasvloer.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
-            <div className="text-gray-300 space-y-1">
+            <h4 className="font-semibold mb-4 font-rawest">Contact</h4>
+            <div className="text-gray-300 space-y-1 text-left">
               <p>Bert Vanhees</p>
               <p>Kelbergenstraat 97</p>
               <p>3290 Diest</p>
@@ -35,8 +35,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Diensten</h4>
-            <div className="text-gray-300 space-y-2">
+            <h4 className="font-semibold mb-4 font-rawest">Diensten</h4>
+            <div className="text-gray-300 space-y-2 text-left">
               <Link href="/aanbod" className="block hover:text-white transition-colors">
                 Opleidingen
               </Link>
@@ -50,8 +50,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Juridisch</h4>
-            <div className="text-gray-300 space-y-2">
+            <h4 className="font-semibold mb-4 font-rawest">Juridisch</h4>
+            <div className="text-gray-300 space-y-2 text-left">
               <Link href="/privacy-policy" className="block hover:text-white transition-colors">
                 Privacybeleid
               </Link>

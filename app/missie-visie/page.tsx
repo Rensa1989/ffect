@@ -31,24 +31,14 @@ const pillars = [
 
 export default function MissieVisiePage() {
   return (
-    <div className="py-16 px-4">
+    <div className="py-16 px-4 font-roboto">
       <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">Missie & visie</h1>
-
-        {/* Removed the slogan here */}
-        {/* <div className="text-center mb-8">
-          <div className="flex justify-center items-center space-x-4 mb-4">
-            <div className="w-8 h-0.5 bg-ffect-light"></div>
-            <Target className="w-6 h-6 text-ffect-medium" />
-            <div className="w-8 h-0.5 bg-ffect-light"></div>
-          </div>
-          <p className="text-ffect-dark italic">"Samen bouwen aan optimale leeromgevingen"</p>
-        </div> */}
+        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900 font-rawest">Missie & visie</h1>
 
         <div className="space-y-8">
           <Card className="border-ffect-light/20">
             <CardContent className="p-8">
-              <div className="prose prose-lg max-w-none">
+              <div className="prose prose-lg max-w-none text-left">
                 <p className="text-gray-700 leading-relaxed mb-6">
                   De maatschappij is in volle verandering en dit brengt heel wat teweeg. Samen op weg gaan, elkaar
                   inspireren en versterken zijn essentieel om iedereen in maximale groei te kunnen zetten.
@@ -87,7 +77,7 @@ export default function MissieVisiePage() {
 
           {/* New section for the 5 pillars */}
           <section className="py-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">Onze 5 Pijlers</h2>
+            <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 font-rawest">Onze 5 Pijlers</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {pillars.map((pillar, index) => (
                 <Card
@@ -96,7 +86,7 @@ export default function MissieVisiePage() {
                 >
                   <CardContent className="p-6">
                     <pillar.icon className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                    <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
+                    <h3 className="text-lg font-semibold mb-2 font-rawest">{pillar.title}</h3>
                     <p className="text-gray-600 text-sm">{pillar.description}</p>
                   </CardContent>
                 </Card>
@@ -105,14 +95,12 @@ export default function MissieVisiePage() {
           </section>
 
           <Card className="bg-gradient-to-r from-ffect-dark to-ffect-medium text-white">
-            <CardContent className="p-8">
-              <div className="text-center">
-                <h2 className="text-2xl font-bold mb-4">Onze kernvisie</h2>
-                <p className="text-xl leading-relaxed">
-                  Samen bouwen aan een optimale werk- leer- en leefomgeving waarin persoonlijke groei en professionele
-                  ontwikkeling hand in hand gaan, met de focus op een direct en duurzaam effect tot op de klasvloer.
-                </p>
-              </div>
+            <CardContent className="p-8 text-center">
+              <h2 className="text-2xl font-bold mb-4 font-rawest">Onze kernvisie</h2>
+              <p className="text-xl leading-relaxed">
+                Samen bouwen aan een optimale werk- leer- en leefomgeving waarin persoonlijke groei en professionele
+                ontwikkeling hand in hand gaan, met de focus op een direct en duurzaam effect tot op de klasvloer.
+              </p>
             </CardContent>
           </Card>
         </div>

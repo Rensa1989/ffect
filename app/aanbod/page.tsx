@@ -10,68 +10,78 @@ const trainings = [
     title: "Verbindende begeleidingsgesprekken met pubers",
     description: "Inzetten op een verbindend klas- en schoolklimaat",
     popular: false,
+    image: "/images/training-1-new.jpg",
   },
   {
     id: 2,
     title: "Een klas krijg je, een groep maak je",
     description: "Het creëren van een veilige klasgroep: preventie, groepsdynamiek en succesvol herstellen",
     popular: true,
+    image: "/images/training-2.jpg",
   },
   {
     id: 3,
     title: "Constructief omgaan met moeilijk hanteerbaar gedrag",
     description: "Grote mond, geen interesse en mijn klas op stelten… Wat doe ik hieraan?",
     popular: true,
+    image: "/images/training-3.jpg",
   },
   {
     id: 4,
     title: "Nieuwe job in het onderwijs: Hoe manage ik mijn klas?",
     description: "Wat ik zeker moet weten om aan de slag te gaan",
     popular: false,
+    image: "/images/training-4.jpg",
   },
   {
     id: 5,
     title: "Effectief beleid en constructieve aanpak bij moeilijk hanteerbaar gedrag",
     description: "Een onderbouwd beleid voor een optimale leer-, leef- en werkomgeving",
     popular: false,
+    image: "/images/training-5.jpg",
   },
   {
     id: 6,
     title: "Agressief gedrag: Hoe reageren?",
     description: "Een plan van aanpak voor het hele team",
     popular: true,
+    image: "/images/agressief-gedrag-hoe-reageren2.jpg", // Updated image
   },
   {
     id: 7,
     title: "De kunst van verbindend communiceren tijdens moeilijke gesprekken met ouders",
     description: "Oudercontacten en slechtnieuwsgesprek, hoe pak ik dat aan?",
     popular: false,
+    image: "/images/training-7.jpg",
   },
   {
     id: 8,
     title: "Van uitdaging naar verbinding: succesvol samenwerken met ouders",
     description: "Inzetten op ouderbetrokkenheid en verbindend omgaan met agressie bij ouders",
     popular: true,
+    image: "/images/training-8.jpg",
   },
   {
     id: 9,
     title: "Van een machtige naar een krachtige aanpak",
     description: "Introductie in nieuwe autoriteit, geweldloos verzet",
     popular: false,
+    image: "/images/training-9.jpg",
   },
   {
     id: 10,
     title: "Verbonden in groei: hechtingsproblematiek begrijpen en omgaan met ongewenst gedrag",
     description: "Hoe kwetsbare plekjes in de ontwikkeling kunnen leiden tot problemen op school",
     popular: false,
+    image: "/images/training-10-updated.jpg",
   },
 ]
 
 export default function AanbodPage() {
   return (
-    <div className="py-16 px-4">
+    <div className="py-16 px-4 font-roboto">
       <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">Aanbod</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900 font-rawest">Aanbod</h1>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {trainings.map((training) => (
@@ -97,15 +107,7 @@ export default function AanbodPage() {
                   <div className="mb-4">
                     <div className="w-full h-32 rounded-lg mb-4 overflow-hidden">
                       <Image
-                        src={
-                          training.id === 1
-                            ? `/images/training-1-new.jpg`
-                            : training.id === 6 // Changed for training ID 6
-                              ? `/images/agressief-gedrag-hoe-reageren2.jpg`
-                              : training.id === 10
-                                ? `/images/training-10-updated.jpg`
-                                : `/images/training-${training.id}.jpg`
-                        }
+                        src={training.image || "/placeholder.svg"}
                         alt={training.title}
                         width={300}
                         height={128}
@@ -113,7 +115,9 @@ export default function AanbodPage() {
                       />
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900 leading-tight">{training.title}</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900 leading-tight font-rawest">
+                    {training.title}
+                  </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{training.description}</p>
                 </CardContent>
               </Card>

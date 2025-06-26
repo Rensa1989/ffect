@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-roboto">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-ffect-light/10 to-ffect-medium/10 py-20 px-4 relative overflow-hidden">
         {/* Educational Pattern Background */}
@@ -47,9 +47,7 @@ export default function HomePage() {
                 className="h-16 w-16 text-ffect-dark" // Apply text color to logo
                 priority
               />
-              <h1 className="text-5xl font-bold text-ffect-dark">
-                {" "}
-                {/* Apply text color to h1 */}
+              <h1 className="text-5xl font-bold text-ffect-dark font-rawest">
                 Ffect<span className="text-ffect-dark">.</span> {/* Capitalized F and ensured dot color */}
               </h1>
             </div>
@@ -58,7 +56,7 @@ export default function HomePage() {
             </p>
           </header>
 
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-lg p-8 mb-8 text-left">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               Interactieve opleidingen en trajecten met direct en blijvend effect tot op de klasvloer. De vormingen
               richten zich tot leerkrachten, leerlingbegeleiders, zorgcoördinatoren, directies,
@@ -83,11 +81,13 @@ export default function HomePage() {
               .
             </p>
 
-            <Link href="/contact">
-              <Button size="lg" className="bg-ffect-dark hover:bg-ffect-medium text-white px-8 py-3 text-lg">
-                MAIL HIER
-              </Button>
-            </Link>
+            <div className="text-center">
+              <Link href="/contact">
+                <Button size="lg" className="bg-ffect-dark hover:bg-ffect-medium text-white px-8 py-3 text-lg">
+                  MAIL HIER
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -109,7 +109,7 @@ export default function HomePage() {
             <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors">
               <CardContent className="p-6">
                 <GraduationCap className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-lg font-semibold mb-2">Praktijkervaring</h3>
+                <h3 className="text-lg font-semibold mb-2 font-rawest">Praktijkervaring</h3>
                 <p className="text-gray-600">Vanuit 25+ jaar ervaring in het onderwijs</p>
               </CardContent>
             </Card>
@@ -117,7 +117,7 @@ export default function HomePage() {
             <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors">
               <CardContent className="p-6">
                 <Users className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-lg font-semibold mb-2">Interactief</h3>
+                <h3 className="text-lg font-semibold mb-2 font-rawest">Interactief</h3>
                 <p className="text-gray-600">Actieve betrokkenheid van alle deelnemers</p>
               </CardContent>
             </Card>
@@ -125,7 +125,7 @@ export default function HomePage() {
             <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors">
               <CardContent className="p-6">
                 <Target className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-lg font-semibold mb-2">Op maat</h3>
+                <h3 className="text-lg font-semibold mb-2 font-rawest">Op maat</h3>
                 <p className="text-gray-600">Aangepast aan jullie specifieke behoeften</p>
               </CardContent>
             </Card>
@@ -133,7 +133,7 @@ export default function HomePage() {
             <Card className="text-center border-ffect-light/20 hover:border-ffect-medium/40 transition-colors">
               <CardContent className="p-6">
                 <BookOpen className="w-12 h-12 text-ffect-medium mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-lg font-semibold mb-2">Wetenschappelijk</h3>
+                <h3 className="text-lg font-semibold mb-2 font-rawest">Wetenschappelijk</h3>
                 <p className="text-gray-600">Onderbouwd met wetenschappelijke kaders</p>
               </CardContent>
             </Card>

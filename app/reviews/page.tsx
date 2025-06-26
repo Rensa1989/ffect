@@ -51,9 +51,9 @@ const reviews = [
 
 export default function ReviewsPage() {
   return (
-    <div className="py-16 px-4">
+    <div className="py-16 px-4 font-roboto">
       <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl font-bold text-center mb-4 text-gray-900">Reviews</h1>
+        <h1 className="text-4xl font-bold text-center mb-4 text-gray-900 font-rawest">Reviews</h1>
         <div className="text-center mb-8">
           <div className="flex justify-center items-center space-x-4 mb-4">
             <div className="w-8 h-0.5 bg-ffect-light"></div>
@@ -70,7 +70,7 @@ export default function ReviewsPage() {
               key={review.id}
               className="h-full border-ffect-light/20 hover:border-ffect-medium/40 transition-colors"
             >
-              <CardContent className="p-6 flex flex-col h-full">
+              <CardContent className="p-6 flex flex-col h-full text-left">
                 <div className="flex items-center mb-4">
                   <Quote className="w-8 h-8 text-ffect-medium mr-2" />
                   <div className="flex space-x-1">

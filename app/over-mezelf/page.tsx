@@ -4,9 +4,9 @@ import { GraduationCap } from "lucide-react"
 
 export default function OverMezelfPage() {
   return (
-    <div className="py-16 px-4">
+    <div className="py-16 px-4 font-roboto">
       <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">Over mezelf</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900 font-rawest">Over mezelf</h1>
 
         <div className="text-center mb-8">
           <div className="flex justify-center items-center space-x-4 mb-4">
@@ -31,14 +31,13 @@ export default function OverMezelfPage() {
                       className="rounded-full object-cover"
                     />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900">Bert Vanhees</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 font-rawest">Bert Vanhees</h2>
                   {/* Removed the title below the photo */}
-                  {/* <p className="text-ffect-dark font-medium">Onderwijsexpert & Coach</p> */}
                 </div>
               </div>
 
               <div className="md:w-2/3 p-8">
-                <div className="prose prose-lg max-w-none">
+                <div className="prose prose-lg max-w-none text-left">
                   <p className="text-gray-700 leading-relaxed mb-4">
                     Mijn naam is Bert Vanhees. Ik werk sinds 1997 in het onderwijs, waar ik als leerkracht
                     beroepsgerichte vorming in het buitengewoon onderwijs startte. Nadien ging ik ook als leerkracht

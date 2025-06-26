@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Roboto } from "next/font/google"
+import localFont from "next/font/local" // Import localFont for Rawest
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
@@ -9,6 +10,26 @@ import ScrollToTop from "@/components/scroll-to-top"
 import CookieConsent from "@/components/cookie-consent"
 
 const inter = Inter({ subsets: ["latin"] })
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-roboto",
+})
+
+// Configure local font for Rawest
+// You need to place the Rawest font files (e.g., Rawest-Regular.woff2) in public/fonts
+const rawest = localFont({
+  src: [
+    {
+      path: "../public/fonts/Rawest-Regular.woff2", // Adjust path if your font file is named differently
+      weight: "400",
+      style: "normal",
+    },
+    // Add other weights/styles if available
+  ],
+  variable: "--font-rawest",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: {
@@ -114,7 +135,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${roboto.className} ${rawest.variable}`}>
         <ScrollToTop />
         <Header />
         <main className="min-h-screen">{children}</main>

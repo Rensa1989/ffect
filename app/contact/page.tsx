@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { MapPin, Phone, Mail } from "lucide-react"
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3" // Import reCAPTCHA hook
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -18,18 +19,55 @@ export default function ContactPage() {
     message: "",
     newsletter: false,
   })
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [responseMessage, setResponseMessage] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const { executeRecaptcha } = useGoogleReCaptcha()
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission. For actual email sending, consider using a Server Action or an external service
-    // that sends to bert@ffect.be.
-    console.log("Form submitted:", formData)
+    setStatus("loading")
+    setResponseMessage("")
+
+    if (!executeRecaptcha) {
+      console.error("reCAPTCHA not yet available.")
+      setResponseMessage("reCAPTCHA is not ready. Please try again.")
+      setStatus("error")
+      return
+    }
+
+    try {
+      const recaptchaToken = await executeRecaptcha("contact_form_submit")
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, recaptchaToken }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setStatus("success")
+        setResponseMessage(data.message)
+        setFormData({ name: "", email: "", school: "", message: "", newsletter: false }) // Clear form
+      } else {
+        setStatus("error")
+        setResponseMessage(data.message || "Er is een onbekende fout opgetreden.")
+      }
+    } catch (error) {
+      console.error("Fout bij verzenden contactformulier:", error)
+      setStatus("error")
+      setResponseMessage("Er is een fout opgetreden bij het verzenden van uw bericht.")
+    }
   }
 
   return (
-    <div className="py-16 px-4">
+    <div className="py-16 px-4 font-roboto">
       <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">Contact</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-gray-900 font-rawest">Contact</h1>
 
         <div className="text-center mb-8">
           <div className="flex justify-center items-center space-x-4 mb-4">
@@ -44,7 +82,7 @@ export default function ContactPage() {
           {/* Contact Information */}
           <Card className="border-ffect-light/20">
             <CardContent className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Contactgegevens</h2>
+              <h2 className="text-2xl font-bold mb-6 text-gray-900 font-rawest">Contactgegevens</h2>
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -87,7 +125,7 @@ export default function ContactPage() {
           {/* Contact Form */}
           <Card className="border-ffect-light/20">
             <CardContent className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Stuur een bericht</h2>
+              <h2 className="text-2xl font-bold mb-6 text-gray-900 font-rawest">Stuur een bericht</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -171,9 +209,17 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-ffect-dark hover:bg-ffect-medium text-white">
-                  Verstuur bericht
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-ffect-dark hover:bg-ffect-medium text-white"
+                  disabled={status === "loading"}
+                >
+                  {status === "loading" ? "Verzenden..." : "Verstuur bericht"}
                 </Button>
+
+                {status === "success" && <p className="text-green-600 text-center mt-4">{responseMessage}</p>}
+                {status === "error" && <p className="text-red-600 text-center mt-4">{responseMessage}</p>}
               </form>
             </CardContent>
           </Card>
